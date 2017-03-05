@@ -1,0 +1,38 @@
+.app-head{
+  min-width:1180px;
+  height: 60px;
+  box-shadow: 0px 0px 25px #fff;
+  border-bottom: 1px solid #828282;
+  color:#fff;
+  .roller{
+    width: 237px;
+    overflow: hidden;
+    white-space: nowrap;
+    padding-top: 15px;
+    margin-left: 10px;
+    float:left;
+    .roller-item{
+      animation:mymove 5s linear infinite;
+      position: relative;
+      display: inline-block;
+      padding-right:5px;
+    }
+    @keyframes mymove{
+      0%{left:0px;}
+      100%{left:-314px;}
+    }
+  }
+  img{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    float:right;
+    margin:10px 90px 0px 0px;
+  }
+  .name{
+    float: right;
+    position: relative;
+    top: 18px;
+    left: 110px;
+  }
+}
