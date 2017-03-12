@@ -4,8 +4,8 @@ import { Router, Route, hashHistory, IndexRoute,IndexRedirect } from 'react-rout
 import Head from './components/head/head';
 import Nav from './components/nav/nav';
 import Bar from './components/bar/demo';
-import WaterBall from './components/water_ball/demo';
-
+import ListBanner from './components/list_banner/demo';
+import Load from './components/load/demo';
 
 export default class Container extends Component{
     constructor(props){
@@ -20,7 +20,8 @@ export default class Container extends Component{
                   <Route path="/" component={Nav}>
                     <IndexRedirect to="/bar" />
                     <Route path="/bar" component={Bar}/>
-                    <Route path="/waterBall" component={WaterBall}/>
+                    <Route path="/listBanner" component={ListBanner}/>
+                    <Route path="/load" component={Load}/>
                   </Route>
                 </Router>
             </div>

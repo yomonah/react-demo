@@ -34,7 +34,7 @@ export default class Demo extends Component{
         }
         var props={
             width:600,
-            hight:400,
+            height:400,
             duration:1000, //柱子动效时长
             data:data,
             fillColor:"rgba(16,78,139,0.7)",

@@ -1,0 +1,100 @@
+.app-move-list{
+  background: rgb(6,11,21);
+  .move-box{
+    position: relative;
+    width: 475px;
+    height: 105px;
+    top: 28px;
+    left: 57px;
+    border: 2px solid #F0FFF0;
+    border-radius: 10px;
+    z-index: 1;
+    box-shadow: 0 0 30px #F0FFF0;
+    transition:top 0.5s;
+    .move-box-hide{
+      width: 475px;
+      height: 105px;
+      border-radius: 10px;
+    }
+  }
+  .item-wrapper{
+    margin-left: 30px;
+    position: relative;
+    top: -95px;
+    .move-list-item{
+      width: 450px;
+      border: 1px solid #668B8B;
+      height: 40px;
+      list-style: none;
+      color: #668B8B;
+      animation: 0.8s showItem;
+      .item-time{
+        position: relative;
+        top: 12px;
+        left: 5px;
+      }
+      .item-name{
+        position: relative;
+        left: 50px;
+        top: 12px;
+      }
+      .item-value{
+        position: relative;
+        top: 12px;
+        float: right;
+        margin-right: 15px;
+      }
+    }
+    @keyframes showItem{
+      0%{opacity:0}
+      100%{opacity:1}
+    }
+    .detail-item{
+      width: 470px;
+      height: 105px;
+      list-style: none;
+      color: #668B8B;
+      position: relative;
+      left: -10px;
+      .detail-show{
+        width: 470px;
+        height: 105px;
+        color: #668B8B;
+        animation : 1s show;
+        .item-time{
+          padding: 5px 0px 0px 10px;
+        }
+        .item-name{
+        //   left:270px;
+          padding-left: 10px;
+        }
+        .item-title{
+          position: relative;
+          top: 55px;
+          left: -55px;
+        }
+        .bar-container{
+          position: relative;
+          left: 10px;
+        }
+      }
+      @keyframes show{
+        0%{opacity:0}
+        50%{opacity:0}
+        100%{opacity:1}
+      }
+      .detail-hide{
+        width: 470px;
+        height: 105px;
+        color: #668B8B;
+        animation: 1s hide;
+        animation-delay:4s;
+      }
+      @keyframes hide{
+        0%{opacity:1}
+        100%{opacity:0}
+      }
+    }
+  }
+}
+

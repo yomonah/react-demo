@@ -45,7 +45,7 @@ export default class Demo extends Component{
 
     render(){
         let {data} = this.state;
-       {/*} return <WaterBall data={data} config={this._getCircleProps()}/>*/}
-       return <div>on working...</div>
+       return <WaterBall data={data} config={this._getCircleProps()}/>
+       {/*} return <div>on working...</div>*/}
     }
 }

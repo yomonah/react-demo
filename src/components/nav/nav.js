@@ -9,8 +9,8 @@ export default class Head extends Component{
         }
         this.pathProps = [
             {name:'柱图', path:'/bar'},
-            {name:'水波球', path:'/waterBall'},
-            // {name:'水柱图', path:'/waterRect'},
+            {name:'轮播列表', path:'/listBanner'},
+            {name:'进度条', path:'/load'},
             // {name:'轮播列表', path:'/listBanner'},
         ]
     }
