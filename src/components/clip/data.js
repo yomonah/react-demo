@@ -1,0 +1,19 @@
+export let category=[
+    {type:'message'},
+    {type:'triangle'},
+    {type:'trapezoid'},
+    {type:'pentagon'},
+    {type:'rabbet'},
+    {type:'parallelogram'},
+    {type:'octagon'},
+    {type:'left-arrow'},
+    {type:'rhombus'},
+    {type:'right-arrow'},
+    {type:'hexagon'},
+    {type:'left-point'},
+    {type:'cross'},
+    {type:'right-point'},
+    {type:'star'},
+    {type:'close'},
+    {type:'complex'}
+];
