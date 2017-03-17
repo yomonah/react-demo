@@ -11,9 +11,8 @@ export default class Clip extends Component{
     }
 
     componentDidMount(){
-        let self = this;
-        this.timer = setInterval(function(){
-            self.changeIndex();
+        this.timer = setInterval(()=>{
+            this.changeIndex();
         },3000);
     }
 
@@ -25,6 +24,10 @@ export default class Clip extends Component{
             activeIndex = activeIndex+1;
         }
         this.setState({activeIndex});
+    }
+
+    componentWillUnmount(){
+        this.timer && clearInterval(this.timer);
     }
 
     render(){

@@ -60,10 +60,9 @@ export default class MoveList extends Component{
     }
 
     componentDidMount(){
-        let self = this;
         let {duration} = this.props;
-        this.timer = setInterval(function(){
-            self.changeIndex();
+        this.timer = setInterval(()=>{
+            this.changeIndex();
         },duration);
     }
 

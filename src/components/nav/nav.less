@@ -15,6 +15,12 @@
         width: 167px;
         text-align: center;
         margin: 0 auto;
+        transition:0.5s -webkit-clip-path;
+        -webkit-clip-path:polygon(0% 0%, 100% 0%, 100% 50%, 100% 100%, 0% 100%,0% 50%);
+        &:hover{
+          background:#333;
+          -webkit-clip-path:polygon(0% 0%, 100% 0%, 80% 50%, 100% 100%, 0% 100%, 20% 50%);
+        }
         a{
           position: relative;
           top: 30px;

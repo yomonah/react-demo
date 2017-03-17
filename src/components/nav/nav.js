@@ -11,7 +11,8 @@ export default class Head extends Component{
             {name:'柱图', path:'/bar'},
             {name:'轮播列表', path:'/listBanner'},
             {name:'进度条', path:'/load'},
-            {name:'剪裁遮罩', path:'/clip-path'}
+            {name:'剪裁遮罩', path:'/clip-path'},
+            {name:'环形倒计时', path:'/circle-timer'}
             // {name:'轮播列表', path:'/listBanner'},
         ]
     }
