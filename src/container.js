@@ -8,6 +8,7 @@ import ListBanner from './components/list_banner/demo';
 import Load from './components/load/demo';
 import ClipPath from './components/clip/clip';
 import CircleTimer from './components/circle_timer/demo';
+import WaterBall from './components/water_ball/demo';
 
 export default class Container extends Component{
     constructor(props){
@@ -26,6 +27,7 @@ export default class Container extends Component{
                     <Route path="/load" component={Load}/>
                     <Route path="/clip-path" component={ClipPath}/>
                     <Route path="/circle-timer" component={CircleTimer}/>
+                    <Route path='/water-ball' component={WaterBall}/>
                   </Route>
                 </Router>
             </div>

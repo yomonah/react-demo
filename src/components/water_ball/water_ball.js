@@ -21,6 +21,7 @@ export default class Main extends Component{
             return false;
         }
     }
+
     initWaterLevel(cfg){
         let {idDom, width, height} = cfg;
         var svg = d3.select('#'+idDom)
@@ -36,7 +37,7 @@ export default class Main extends Component{
         this.water_gauge = this.loadLiquidFillGauge(idDom+"-svg", 30, config);
     }
 
-  liquidFillGaugeDefaultSettings(){
+   liquidFillGaugeDefaultSettings(){
     let props = this.props.config;
     let {outerRect,innerRect,innerCircle,outerCircle} = props;
     return {
@@ -55,14 +56,14 @@ export default class Main extends Component{
         waveColor: innerCircle.fillColor || "rgba(85, 180, 255,0.5)", // The color of the fill wave.
         waveOffset: 0, // The amount to initially offset the wave. 0 = no offset. 1 = offset of one full wave.
         textVertPosition: .5, // The height at which to display the percentage text withing the wave circle. 0 = bottom, 1 = top.
-        textSize: props.textSize || 0.8, // The relative height of the text to display in the wave circle. 1 = 50%
+        textSize: props.textSize || 0.8, // font size of text. like:56%
         valueCountUp: true, // If true, the displayed value counts up from 0 to it's final value upon loading. If false, the final value is displayed.
         displayPercent: true, // If true, a % symbol is displayed after the value.
         textColor: props.tectColor || "#C2E2F9", // The color of the value text when the wave does not overlap it.
         waveTextColor: props.waveTextColor || "#A4DBf8", // The color of the value text when the wave overlaps it.
        
-        innerCircleR: innerCircle.r || 80,
-        outerCircleR: outerCircle.r || 80
+        innerCircleR: innerCircle.r || 80,  //the radius of inner circle
+        outerCircleR: outerCircle.r || 80  //the radius of outer circle
     };
   }
 
@@ -145,7 +146,6 @@ export default class Main extends Component{
         .attr('transform','translate('+locationX+','+locationY+')');
 
     // Draw the outer circle.
-    // debugger
     var gaugeCircleArc = d3.arc()
         .startAngle(gaugeCircleX(0))
         .endAngle(gaugeCircleX(1))
@@ -218,7 +218,7 @@ export default class Main extends Component{
         .transition()
         .duration(config.waveRiseTime)
         .attr('transform','translate('+waveGroupXPosition+','+waveRiseScale(fillPercent)+')')
-        .each('start', function(d,i){ wave.attr('transform','translate(1,0)'); }); // This transform is necessary to get the clip wave positioned correctly when waveRise=true and waveAnimate=false. The wave will not position correctly without this, but it's not clear why this is actually necessary.
+        .on('start',function(d,i){ wave.attr('transform','translate(1,0)'); }); // This transform is necessary to get the clip wave positioned correctly when waveRise=true and waveAnimate=false. The wave will not position correctly without this, but it's not clear why this is actually necessary.
     } else {
       waveGroup.attr('transform','translate('+waveGroupXPosition+','+waveRiseScale(fillPercent)+')');
     }
@@ -232,7 +232,7 @@ export default class Main extends Component{
         .ease(d3.easeLinear)
         .attr('transform','translate('+waveAnimateScale(1)+',0)')
         .attr('T', 1)
-        .each('end', function(d,i){
+        .on('end',function(d,i){
           wave.attr('T', 0);
           animateWave(config.waveAnimateTime);
         });
@@ -291,7 +291,7 @@ export default class Main extends Component{
             .attr('d', newClipArea)
             .attr('transform','translate('+newWavePosition+',0)')
             .attr('T','1')
-            .each('end', function(d,i){
+            .on('end',function(d,i){
               if(config.waveAnimate){
                 wave.attr('transform','translate('+waveAnimateScale(0)+',0)');
                 animateWave(config.waveAnimateTime);
