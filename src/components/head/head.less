@@ -1,38 +1,68 @@
 .app-head{
   min-width:1260px;
-  height: 60px;
-  box-shadow: 0px 0px 25px #fff;
-  border-bottom: 1px solid #828282;
+  height: 323px;
+  background: url(./../../img/head_bg.jpg) no-repeat;
+  background-size:contain;
   color:#fff;
-  .roller{
-    width: 237px;
-    overflow: hidden;
-    white-space: nowrap;
-    padding-top: 15px;
-    margin-left: 10px;
-    float:left;
-    .roller-item{
-      animation:mymove 5s linear infinite;
-      position: relative;
-      display: inline-block;
-      padding-right:5px;
-    }
-    @keyframes mymove{
-      0%{left:0px;}
-      100%{left:-314px;}
-    }
-  }
-  img{
-    width: 40px;
-    height: 40px;
-    border-radius: 20px;
-    float:right;
-    margin:10px 90px 0px 0px;
+  .title{
+    float: left;
+    color: #fff;
+    font-weight: bold;
+    font-size: 25px;
+    margin: 15px 0px 0px 15px;
+    display: inline-block;
   }
   .name{
-    float: right;
-    position: relative;
-    top: 18px;
-    left: 110px;
+      float: left;
+      margin: 22px 0px 0px 15px;
+      display: inline-block;
+      font-size: 12px;
+      border: 1px solid;
+      border-radius: 10px;
+      padding: 1px 10px;
+      color: #c5c2c2;
   }
+  .home,.blog,.jianshu{
+    float: right;
+    cursor: pointer;
+    margin: 15px 25px 0px 0px;
+    letter-spacing: 2px;
+    &:visited, &:link, &:active{
+      color:#fff;
+      text-decoration: none;
+    }
+    &:hover{
+      color:#469AE0;
+      border-bottom: 3px solid #469AE0;
+    }
+  }
+  
+
+  // -webkit-filter: blur(3px); //滤镜
+  // .roller{
+  //   width: 237px;
+  //   overflow: hidden;
+  //   white-space: nowrap;
+  //   padding-top: 15px;
+  //   margin-left: 10px;
+  //   float:left;
+  //   .roller-item{
+  //     animation:mymove 5s linear infinite;
+  //     position: relative;
+  //     display: inline-block;
+  //     padding-right:5px;
+  //   }
+  //   @keyframes mymove{
+  //     0%{left:0px;}
+  //     100%{left:-314px;}
+  //   }
+  // }
+  // img{
+  //   width: 40px;
+  //   height: 40px;
+  //   border-radius: 20px;
+  //   float:right;
+  //   margin:10px 90px 0px 0px;
+  // }
+  
 }

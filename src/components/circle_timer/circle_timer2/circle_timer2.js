@@ -1,35 +1,41 @@
+/**
+ * 类似音乐播放器里的进度，可手动暂停
+ */
+import './circle_timer2.less';
 import React, {Component} from 'react';
 
 export default class Main extends Component{
     constructor(props){
         super(props);
         this.state = {
+            start:true
         }
         this.currentTime = 0;
         this.currentValue = 0;
     }
 
     componentDidMount(){
+        this.draw();
+    }
+
+    start(){
+        this.setState({start:false});
         this.timer = setInterval(()=>{
-            this.start();
+            this.count();
         },10);
     }
 
-    componentDidUpdate(){
-       this.currentTime = 0;
-       this.currentValue = 0; 
-       this.timer = setInterval(()=>{
-            this.start();
-        },10); 
+    pause(){
+        this.setState({start:true});
+        this.timer && clearInterval(this.timer);
     }
 
     componentWillUnmount(){
         this.timer && clearInterval(this.timer);
     }
 
-    start(){
-        console.log('start')
-        let {time,loop} = this.props
+    count(){
+        let {time} = this.props
         this.currentTime += 10;
         this.currentValue = 2*this.currentTime/time;
         this.draw();
@@ -39,6 +45,8 @@ export default class Main extends Component{
         let {width, height, radius, defaultColor, ringColor, lineWidth} = this.props;
         if(this.currentValue > 2){  //判断是否已到时
             this.currentValue = 0;
+            this.currentTime = 0;
+            this.setState({start:true})
             this.timer && clearInterval(this.timer);
         }
         var canvas = this.refs.circle;
@@ -65,11 +73,17 @@ export default class Main extends Component{
     }
 
     render(){
+        let {start} = this.state;
         return(
-            <canvas ref='circle' id='circle'/>
+            <div className='canvas-wrapper'>
+                <canvas ref='circle' />
+               { start ? 
+               <i className="fa fa-play start-btn" onClick={this.start.bind(this)}></i> : <i className="fa fa-pause pause-btn" onClick={this.pause.bind(this)}></i>}
+            </div>
         )
     }
 }
+
 Main.defaultProps= {
     width:100,  //canvas宽度
     height:100,  //canvas高度

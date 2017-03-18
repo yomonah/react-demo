@@ -1,6 +1,8 @@
 import './clip.less';
 import React, {Component} from 'react';
 import {category} from './data';
+import Title from '../../../components/title/title';
+import {INTRODUCTION} from './introduce';
 
 export default class Clip extends Component{
     constructor(props){
@@ -13,7 +15,7 @@ export default class Clip extends Component{
     componentDidMount(){
         this.timer = setInterval(()=>{
             this.changeIndex();
-        },3000);
+        },2000);
     }
 
     changeIndex(){
@@ -33,6 +35,8 @@ export default class Clip extends Component{
     render(){
         return(
             <div className='app-clip'>
+             <Title {...INTRODUCTION}/>
+             <div className='demo-wrapper'>
               <div className='container'>
                 <div className={`content ${category[this.state.activeIndex].type}`}></div>
                 <span className='title'>{category[this.state.activeIndex].type}</span>
@@ -41,6 +45,7 @@ export default class Clip extends Component{
                 <div className='animate-com'></div>
                 <span className='title'>mouse hover me</span>
               </div>
+              </div> 
             </div>
         )
     }

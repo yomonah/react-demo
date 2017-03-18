@@ -1,26 +1,29 @@
 import './head.less';
 import React, {Component} from 'react';
-var imgSrc = require('../../img/head_pic.jpg');
 
 export default class Head extends Component{
     constructor(props){
         super(props);
         this.state = {
-          username:'mia yu',
-          text:'welcome to visit my personal home page!'
+          username:'MIA YU',
+          title:'REACT DEMO'
         }
     }
 
     render(){
-        let {username, text} = this.state;
+        let {username, title} = this.state;
         return(
             <div className='app-head'>
-              <div className='roller'>
-                <span className='roller-item'>{text}</span>
-                <span className='roller-item'>{text}</span>
-              </div>
-              <img src={imgSrc} alt='photo'/>
+              <span className='title'>{title}</span>
               <span className='name'>{username}</span>
+              <a className='jianshu' href='http://www.jianshu.com/u/b344d2977570' target="_blank">SIMPLE BOOK</a>
+              <a className='blog' href='https://yomonah.github.io/' target="_blank">BLOG</a>
+              <a className='home'>HOME</a>
+
+              {/*} <div className='roller'>
+                <span className='roller-item'>{text}</span>
+                <span className='roller-item'>{text}</span>
+              </div>*/}
             </div>
         )
     }

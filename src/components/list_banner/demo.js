@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import List from './list';
+import Title from '../../../components/title/title';
+import {INTRODUCTION} from './introduce';
 
 export default class Demo extends Component{
     constructor(props){
@@ -27,6 +29,11 @@ export default class Demo extends Component{
 
     render(){
        let listProps = this.getProps();
-       return <List {...listProps}/>
+       return <div>
+                <Title {...INTRODUCTION}/>
+                <div className='demo-wrapper'>
+                    <List {...listProps}/>
+                </div>
+            </div>
     }
 }

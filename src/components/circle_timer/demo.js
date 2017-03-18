@@ -1,6 +1,9 @@
 import './demo.less';
 import React, {Component} from 'react';
-import CircleTimer from './circle_timer';
+import CircleTimer from './circle_timer1/circle_timer';
+import CircleTimer2 from './circle_timer2/circle_timer2';
+import Title from '../../../components/title/title';
+import {INTRODUCTION} from './introduce';
 
 export default class Demo extends Component{
     constructor(props){
@@ -43,6 +46,8 @@ export default class Demo extends Component{
     render(){
         console.log('demo render')
        return <div className='app-circle'>
+            <Title {...INTRODUCTION}/>
+            <div className='demo-wrapper'>
                 <div className='demo-container'>
                     <div className='demo'>
                         <CircleTimer {...this.getProps()}/>
@@ -53,7 +58,8 @@ export default class Demo extends Component{
                     <button className='button' onClick={this.reload.bind(this)}>reload</button>
                 </div>
                 <div className='demo-container'>
-
+                    <CircleTimer2 {...this.getProps()}/>
+                </div>
                 </div>
            </div>
     }

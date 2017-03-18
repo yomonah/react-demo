@@ -30,14 +30,14 @@ export default class Head extends Component{
         let links = this.getLinks();
         return(
             <div className='app-wrapper'>
-              <div className='menu-wrapper'>
+              <div className='component-wrapper'>
+                 {this.props.children}
+               </div>
+               <div className='menu-wrapper'>
                 <ul className='link-wrapper'>
                   {links}
                  </ul>
               </div>
-              <div className='component-wrapper'>
-                 {this.props.children}
-               </div>
             </div>
         )
     }

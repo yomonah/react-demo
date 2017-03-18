@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import Bar from './bar';
+import Title from '../../../components/title/title';
+import {INTRODUCTION} from './introduce';
 
 export default class Demo extends Component{
     constructor(props){
@@ -39,7 +41,7 @@ export default class Demo extends Component{
             data:data,
             fillColor:"rgba(16,78,139,0.7)",
             strokeColor:'#104E8B',
-            textColor:'#F5FFFA',
+            textColor:'#666',
             textSize:14,
             label:true,
             rectPadding:8,
@@ -58,6 +60,12 @@ export default class Demo extends Component{
     }
 
     render(){
-        return <Bar {...this._getBarProps()}/>
+        let {title, context} = INTRODUCTION;
+        return <div>
+            <Title title={title} context={context}/>
+            <div className='demo-wrapper'>
+                <Bar {...this._getBarProps()}/>
+            </div>
+        </div>
     }
 }

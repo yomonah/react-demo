@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import Load1 from './circle_load/loading';
 import Load2 from './bar_load/load';
+import Title from '../../../components/title/title';
+import {INTRODUCTION} from './introduce';
 
 export default class Demo extends Component{
     constructor(props){
@@ -11,7 +13,10 @@ export default class Demo extends Component{
 
     render(){
        return <div>
-        <Load2/>
+         <Title {...INTRODUCTION}/>
+         <div className='demo-wrapper'>
+          <Load2/>
+          </div>
        </div>
     }
 }
