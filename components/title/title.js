@@ -11,7 +11,6 @@ export default class Title extends Component{
     formatText(text){
         let textArr = text.split('&');
         let item = textArr && textArr.map((item,i)=>{
-            console.log(item)
             return <span key={i}>{item}</span>
         });
         return item;

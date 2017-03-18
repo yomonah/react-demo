@@ -18,7 +18,7 @@ export default class Demo extends Component{
             width:100,
             height:100,
             radius:20,
-            time:5*1000,
+            time:10*1000,
             ringColor:'#999',
             defaultColor:'#333' ,
             lineWidth: 5,
@@ -31,7 +31,7 @@ export default class Demo extends Component{
             width:100,
             height:100,
             radius:15,
-            time:5*1000,
+            time:10*1000,
             ringColor:'#999',
             defaultColor:'#333' ,
             lineWidth: 30,
@@ -44,7 +44,6 @@ export default class Demo extends Component{
     }
 
     render(){
-        console.log('demo render')
        return <div className='app-circle'>
             <Title {...INTRODUCTION}/>
             <div className='demo-wrapper'>

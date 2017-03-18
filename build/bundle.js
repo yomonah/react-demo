@@ -176,7 +176,7 @@
 
 
 	// module
-	exports.push([module.id, "body {\n  min-width: 1180px;\n  overflow: auto;\n  background: #000;\n  color: #fff;\n}\n", ""]);
+	exports.push([module.id, "body {\n  min-width: 1260px;\n  overflow: auto;\n}\n.demo-wrapper {\n  padding: 50px 0px 0px 12%;\n}\n", ""]);
 
 	// exports
 
@@ -21953,9 +21953,21 @@
 
 	var _demo2 = _interopRequireDefault(_demo);
 
-	var _demo3 = __webpack_require__(250);
+	var _demo3 = __webpack_require__(254);
 
 	var _demo4 = _interopRequireDefault(_demo3);
+
+	var _demo5 = __webpack_require__(259);
+
+	var _demo6 = _interopRequireDefault(_demo5);
+
+	var _clip = __webpack_require__(267);
+
+	var _clip2 = _interopRequireDefault(_clip);
+
+	var _demo7 = __webpack_require__(273);
+
+	var _demo8 = _interopRequireDefault(_demo7);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -21989,7 +22001,10 @@
 	                        { path: '/', component: _nav2.default },
 	                        _react2.default.createElement(_reactRouter.IndexRedirect, { to: '/bar' }),
 	                        _react2.default.createElement(_reactRouter.Route, { path: '/bar', component: _demo2.default }),
-	                        _react2.default.createElement(_reactRouter.Route, { path: '/waterBall', component: _demo4.default })
+	                        _react2.default.createElement(_reactRouter.Route, { path: '/listBanner', component: _demo4.default }),
+	                        _react2.default.createElement(_reactRouter.Route, { path: '/load', component: _demo6.default }),
+	                        _react2.default.createElement(_reactRouter.Route, { path: '/clip-path', component: _clip2.default }),
+	                        _react2.default.createElement(_reactRouter.Route, { path: '/circle-timer', component: _demo8.default })
 	                    )
 	                )
 	            );
@@ -27064,8 +27079,6 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var imgSrc = __webpack_require__(243);
-
 	var Head = function (_Component) {
 	    _inherits(Head, _Component);
 
@@ -27075,8 +27088,8 @@
 	        var _this = _possibleConstructorReturn(this, (Head.__proto__ || Object.getPrototypeOf(Head)).call(this, props));
 
 	        _this.state = {
-	            username: 'mia yu',
-	            text: 'welcome to visit my personal home page!'
+	            username: 'MIA YU',
+	            title: 'REACT DEMO'
 	        };
 	        return _this;
 	    }
@@ -27086,30 +27099,35 @@
 	        value: function render() {
 	            var _state = this.state,
 	                username = _state.username,
-	                text = _state.text;
+	                title = _state.title;
 
 	            return _react2.default.createElement(
 	                'div',
 	                { className: 'app-head' },
 	                _react2.default.createElement(
-	                    'div',
-	                    { className: 'roller' },
-	                    _react2.default.createElement(
-	                        'span',
-	                        { className: 'roller-item' },
-	                        text
-	                    ),
-	                    _react2.default.createElement(
-	                        'span',
-	                        { className: 'roller-item' },
-	                        text
-	                    )
+	                    'span',
+	                    { className: 'title' },
+	                    title
 	                ),
-	                _react2.default.createElement('img', { src: imgSrc, alt: 'photo' }),
 	                _react2.default.createElement(
 	                    'span',
 	                    { className: 'name' },
 	                    username
+	                ),
+	                _react2.default.createElement(
+	                    'a',
+	                    { className: 'jianshu', href: 'http://www.jianshu.com/u/b344d2977570', target: '_blank' },
+	                    'SIMPLE BOOK'
+	                ),
+	                _react2.default.createElement(
+	                    'a',
+	                    { className: 'blog', href: 'https://yomonah.github.io/', target: '_blank' },
+	                    'BLOG'
+	                ),
+	                _react2.default.createElement(
+	                    'a',
+	                    { className: 'home' },
+	                    'HOME'
 	                )
 	            );
 	        }
@@ -27155,16 +27173,16 @@
 
 
 	// module
-	exports.push([module.id, ".app-head {\n  min-width: 1180px;\n  height: 60px;\n  box-shadow: 0px 0px 25px #fff;\n  border-bottom: 1px solid #828282;\n  color: #fff;\n}\n.app-head .roller {\n  width: 237px;\n  overflow: hidden;\n  white-space: nowrap;\n  padding-top: 15px;\n  margin-left: 10px;\n  float: left;\n}\n.app-head .roller .roller-item {\n  animation: mymove 5s linear infinite;\n  position: relative;\n  display: inline-block;\n  padding-right: 5px;\n}\n@keyframes mymove {\n  0% {\n    left: 0px;\n  }\n  100% {\n    left: -314px;\n  }\n}\n.app-head img {\n  width: 40px;\n  height: 40px;\n  border-radius: 20px;\n  float: right;\n  margin: 10px 90px 0px 0px;\n}\n.app-head .name {\n  float: right;\n  position: relative;\n  top: 18px;\n  left: 110px;\n}\n", ""]);
+	exports.push([module.id, ".app-head {\n  min-width: 1260px;\n  height: 323px;\n  background: url(" + __webpack_require__(243) + ") no-repeat;\n  background-size: contain;\n  color: #fff;\n}\n.app-head .title {\n  float: left;\n  color: #fff;\n  font-weight: bold;\n  font-size: 25px;\n  margin: 15px 0px 0px 15px;\n  display: inline-block;\n}\n.app-head .name {\n  float: left;\n  margin: 22px 0px 0px 15px;\n  display: inline-block;\n  font-size: 12px;\n  border: 1px solid;\n  border-radius: 10px;\n  padding: 1px 10px;\n  color: #c5c2c2;\n}\n.app-head .home,\n.app-head .blog,\n.app-head .jianshu {\n  float: right;\n  cursor: pointer;\n  margin: 15px 25px 0px 0px;\n  letter-spacing: 2px;\n}\n.app-head .home:visited,\n.app-head .blog:visited,\n.app-head .jianshu:visited,\n.app-head .home:link,\n.app-head .blog:link,\n.app-head .jianshu:link,\n.app-head .home:active,\n.app-head .blog:active,\n.app-head .jianshu:active {\n  color: #fff;\n  text-decoration: none;\n}\n.app-head .home:hover,\n.app-head .blog:hover,\n.app-head .jianshu:hover {\n  color: #469AE0;\n  border-bottom: 3px solid #469AE0;\n}\n", ""]);
 
 	// exports
 
 
 /***/ },
 /* 243 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	module.exports = "data:image/jpeg;base64,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"
+	module.exports = __webpack_require__.p + "44d86d4c8a55c36905ba4f8eb1510dde.jpg";
 
 /***/ },
 /* 244 */
@@ -27203,7 +27221,9 @@
 	        var _this = _possibleConstructorReturn(this, (Head.__proto__ || Object.getPrototypeOf(Head)).call(this, props));
 
 	        _this.state = {};
-	        _this.pathProps = [{ name: '柱图', path: '/bar' }, { name: '水波球', path: '/waterBall' }];
+	        _this.pathProps = [{ name: '柱图', path: '/bar' }, { name: '轮播列表', path: '/listBanner' }, { name: '进度条', path: '/load' }, { name: '剪裁遮罩', path: '/clip-path' }, { name: '环形倒计时', path: '/circle-timer' }
+	        // {name:'轮播列表', path:'/listBanner'},
+	        ];
 	        return _this;
 	    }
 
@@ -27232,17 +27252,17 @@
 	                { className: 'app-wrapper' },
 	                _react2.default.createElement(
 	                    'div',
+	                    { className: 'component-wrapper' },
+	                    this.props.children
+	                ),
+	                _react2.default.createElement(
+	                    'div',
 	                    { className: 'menu-wrapper' },
 	                    _react2.default.createElement(
 	                        'ul',
 	                        { className: 'link-wrapper' },
 	                        links
 	                    )
-	                ),
-	                _react2.default.createElement(
-	                    'div',
-	                    { className: 'component-wrapper' },
-	                    this.props.children
 	                )
 	            );
 	        }
@@ -27288,7 +27308,7 @@
 
 
 	// module
-	exports.push([module.id, ".app-wrapper {\n  color: #fff;\n}\n.app-wrapper .menu-wrapper {\n  width: 19.6%;\n  float: left;\n  box-shadow: 0px 0px 25px #fff;\n  margin-top: 5px;\n  min-height: 550px;\n}\n.app-wrapper .menu-wrapper .link-wrapper {\n  padding-left: 0px;\n}\n.app-wrapper .menu-wrapper .link-wrapper .menu-item {\n  list-style: none;\n  height: 60px;\n  border-bottom: 1px solid #333;\n  width: 167px;\n  text-align: center;\n  margin: 0 auto;\n}\n.app-wrapper .menu-wrapper .link-wrapper .menu-item a {\n  position: relative;\n  top: 30px;\n  color: #868686;\n  text-decoration: none;\n}\n.app-wrapper .menu-wrapper .link-wrapper .menu-item a:hover {\n  color: #fff;\n}\n.app-wrapper .menu-wrapper .link-wrapper .menu-item .active {\n  color: #fff;\n}\n.app-wrapper .component-wrapper {\n  float: left;\n  box-shadow: 0px 0px 25px #fff;\n  width: 67.8%;\n  margin: 5px 0px 0px 8px;\n  min-height: 450px;\n  padding: 100px 0px 0px 150px;\n}\n", ""]);
+	exports.push([module.id, ".app-wrapper {\n  color: #fff;\n}\n.app-wrapper .menu-wrapper {\n  width: 300px;\n  float: left;\n  min-height: 550px;\n}\n.app-wrapper .menu-wrapper .link-wrapper {\n  padding-left: 0px;\n}\n.app-wrapper .menu-wrapper .link-wrapper .menu-item {\n  list-style: none;\n  height: 40px;\n  width: 167px;\n}\n.app-wrapper .menu-wrapper .link-wrapper .menu-item a {\n  position: relative;\n  top: 30px;\n  color: #868686;\n  text-decoration: none;\n  padding-left: 15px;\n  border-left: 2px solid #fff;\n}\n.app-wrapper .menu-wrapper .link-wrapper .menu-item a:hover {\n  color: #469AE0;\n  border-left: 2px solid #469AE0;\n}\n.app-wrapper .menu-wrapper .link-wrapper .menu-item .active {\n  color: #469AE0;\n  border-left: 2px solid #469AE0;\n}\n.app-wrapper .component-wrapper {\n  float: left;\n  box-shadow: 0px 0px 25px #fff;\n  width: 900px;\n  margin: 5px 0px 0px 8px;\n  min-height: 450px;\n}\n", ""]);
 
 	// exports
 
@@ -27312,6 +27332,12 @@
 	var _bar = __webpack_require__(248);
 
 	var _bar2 = _interopRequireDefault(_bar);
+
+	var _title = __webpack_require__(250);
+
+	var _title2 = _interopRequireDefault(_title);
+
+	var _introduce = __webpack_require__(253);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -27366,12 +27392,12 @@
 	            }
 	            var props = {
 	                width: 600,
-	                hight: 400,
+	                height: 400,
 	                duration: 1000, //柱子动效时长
 	                data: data,
 	                fillColor: "rgba(16,78,139,0.7)",
 	                strokeColor: '#104E8B',
-	                textColor: '#F5FFFA',
+	                textColor: '#666',
 	                textSize: 14,
 	                label: true,
 	                rectPadding: 8,
@@ -27391,7 +27417,19 @@
 	    }, {
 	        key: 'render',
 	        value: function render() {
-	            return _react2.default.createElement(_bar2.default, this._getBarProps());
+	            var title = _introduce.INTRODUCTION.title,
+	                context = _introduce.INTRODUCTION.context;
+
+	            return _react2.default.createElement(
+	                'div',
+	                null,
+	                _react2.default.createElement(_title2.default, { title: title, context: context }),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'demo-wrapper' },
+	                    _react2.default.createElement(_bar2.default, this._getBarProps())
+	                )
+	            );
 	        }
 	    }]);
 
@@ -44259,13 +44297,160 @@
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+	__webpack_require__(251);
+
 	var _react = __webpack_require__(7);
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _water_ball = __webpack_require__(251);
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var _water_ball2 = _interopRequireDefault(_water_ball);
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Title = function (_Component) {
+	    _inherits(Title, _Component);
+
+	    function Title(props) {
+	        _classCallCheck(this, Title);
+
+	        var _this = _possibleConstructorReturn(this, (Title.__proto__ || Object.getPrototypeOf(Title)).call(this, props));
+
+	        _this.state = {};
+	        return _this;
+	    }
+
+	    _createClass(Title, [{
+	        key: 'formatText',
+	        value: function formatText(text) {
+	            var textArr = text.split('&');
+	            var item = textArr && textArr.map(function (item, i) {
+	                console.log(item);
+	                return _react2.default.createElement(
+	                    'span',
+	                    { key: i },
+	                    item
+	                );
+	            });
+	            return item;
+	        }
+	    }, {
+	        key: 'shouldComponentUpdate',
+	        value: function shouldComponentUpdate() {
+	            return false;
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            var _props = this.props,
+	                title = _props.title,
+	                context = _props.context;
+
+	            var text = this.formatText(context);
+	            return _react2.default.createElement(
+	                'div',
+	                { className: 'title-wrapper' },
+	                _react2.default.createElement(
+	                    'h5',
+	                    null,
+	                    title
+	                ),
+	                _react2.default.createElement(
+	                    'p',
+	                    null,
+	                    text
+	                )
+	            );
+	        }
+	    }]);
+
+	    return Title;
+	}(_react.Component);
+
+	exports.default = Title;
+
+/***/ },
+/* 251 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(252);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(6)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/less-loader/index.js!./title.less", function() {
+				var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/less-loader/index.js!./title.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 252 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(5)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".title-wrapper {\n  margin-left: 50px;\n}\n.title-wrapper h5 {\n  color: #333;\n  font-size: 20px;\n  letter-spacing: 2px;\n  border-bottom: 1px solid #f5f5f5;\n  width: 800px;\n}\n.title-wrapper p {\n  color: #666;\n  width: 800px;\n}\n.title-wrapper p span {\n  display: block;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 253 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	          value: true
+	});
+	var INTRODUCTION = exports.INTRODUCTION = {
+	          title: 'd3柱形图',
+	          context: 'd3 4.7.1版本开发，配置信息:' + '&width: 图形宽度,整型; 如:500' + '&height: 图形高度,整型; 如:600' + '&data: 数据，目前仅支持数组型，如:［12，34，33，56］' + '&fillColor: 柱子的填充色,如:#fff; ' + '&strokeColor: 柱子的边框色; 如:#999' + '&textColor: 字体颜色; ' + '&textSize: 字体大小,整型;' + '&rectPadding: 每根柱子间隔,整型;' + '&delay: 每根柱子渲染时间差; ' + '&label: boolean值，是否显示数值;' + '&xAxisConfig: x轴相关配置,具体配置参见demo; ' + '&yAxisConfig: y轴相关配置,具体配置参见demo; ' + '&margin: 对象型,指定图形四周边距 '
+	};
+
+/***/ },
+/* 254 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(7);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _list = __webpack_require__(255);
+
+	var _list2 = _interopRequireDefault(_list);
+
+	var _title = __webpack_require__(250);
+
+	var _title2 = _interopRequireDefault(_title);
+
+	var _introduce = __webpack_require__(258);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -44284,60 +44469,34 @@
 	        var _this = _possibleConstructorReturn(this, (Demo.__proto__ || Object.getPrototypeOf(Demo)).call(this, props));
 
 	        _this.state = {
-	            data: { id: 1, value: 0.9 }
+	            data: [{ id: 0, value: 0.2, data: [12, 23, 15, 35, 8, 44, 62, 11, 2, 13, 24, 32, 12, 23, 15, 35, 8, 44, 62, 11, 2, 13, 24, 32], name: 'Tonny', title: 'Today is Sunny day', time: '08:23:30' }, { id: 1, value: 0.76, data: [1, 19, 35, 8, 28, 44, 62, 13, 2, 33, 21, 38, 1, 19, 35, 8, 28, 44, 62, 13, 2, 33, 21, 38], name: 'Sanny', title: 'Today is Rainy day', time: '11:23:30' }, { id: 2, value: 0.33, data: [42, 5, 15, 35, 8, 44, 25, 11, 2, 19, 24, 37, 42, 5, 15, 35, 8, 44, 25, 11, 2, 19, 24, 37], name: 'Miky', title: 'Tomorrow is SunDay', time: '14:23:30' }, { id: 3, value: 0.25, data: [18, 23, 45, 5, 38, 14, 32, 11, 2, 13, 24, 32, 18, 23, 45, 5, 38, 14, 32, 11, 2, 13, 24, 32], name: 'Lily', title: 'Please take a look', time: '09:23:30' }, { id: 4, value: 0.93, data: [12, 23, 15, 35, 8, 44, 62, 11, 2, 13, 24, 32, 12, 23, 15, 35, 8, 44, 62, 11, 2, 13, 24, 32], name: 'Nick', title: 'Money is no more money', time: '20:23:30' }, { id: 5, value: 0.54, data: [1, 19, 35, 8, 28, 44, 62, 13, 2, 33, 21, 38, 1, 19, 35, 8, 28, 44, 62, 13, 2, 33, 21, 38], name: 'Arya', title: 'What are you talking about', time: '16:23:30' }]
 	        };
 	        return _this;
 	    }
 
 	    _createClass(Demo, [{
-	        key: 'componentDidMount',
-	        value: function componentDidMount() {
-	            var self = this;
-	            this.timer = setInterval(self._getData.bind(this), 2000); //自定义随机数据
-	        }
-	    }, {
-	        key: 'componentWillUnmount',
-	        value: function componentWillUnmount() {
-	            this.timer && clearInterval(this.timer);
-	        }
-	    }, {
-	        key: '_getData',
-	        value: function _getData() {
-	            var data = this.state.data;
-
-	            var id = data.id + 1;
-	            data = { id: id, value: Math.random() };
-	            this.setState({ data: data });
-	        }
-	    }, {
-	        key: '_getCircleProps',
-	        value: function _getCircleProps() {
+	        key: 'getProps',
+	        value: function getProps() {
 	            var props = {
-	                idDom: 'circleWaterBall',
-	                textColor: "#C2E2F9",
-	                waveTextColor: "#C2E2F9",
-	                textSize: 0.7,
-	                outerCircle: {
-	                    r: 50,
-	                    fillColor: '#35a1e8'
-	                },
-	                innerCircle: {
-	                    r: 50,
-	                    fillColor: 'rgba(53, 161, 232,0.8)'
-	                }
+	                data: this.state.data,
+	                duration: 5000,
+	                activeIndex: 2
 	            };
 	            return props;
 	        }
 	    }, {
 	        key: 'render',
 	        value: function render() {
-	            var data = this.state.data;
-
-	            {/*} return <WaterBall data={data} config={this._getCircleProps()}/>*/}
+	            var listProps = this.getProps();
 	            return _react2.default.createElement(
 	                'div',
 	                null,
-	                'on working...'
+	                _react2.default.createElement(_title2.default, _introduce.INTRODUCTION),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'demo-wrapper' },
+	                    _react2.default.createElement(_list2.default, listProps)
+	                )
 	            );
 	        }
 	    }]);
@@ -44348,7 +44507,989 @@
 	exports.default = Demo;
 
 /***/ },
-/* 251 */
+/* 255 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(7);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	__webpack_require__(256);
+
+	var _bar = __webpack_require__(248);
+
+	var _bar2 = _interopRequireDefault(_bar);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var MoveList = function (_Component) {
+	    _inherits(MoveList, _Component);
+
+	    function MoveList(props) {
+	        _classCallCheck(this, MoveList);
+
+	        var _this = _possibleConstructorReturn(this, (MoveList.__proto__ || Object.getPrototypeOf(MoveList)).call(this, props));
+
+	        _this.state = {
+	            activeIndex: _this.props.activeIndex
+	        };
+	        return _this;
+	    }
+
+	    _createClass(MoveList, [{
+	        key: 'getRows',
+	        value: function getRows() {
+	            var self = this;
+	            var data = this.props.data;
+	            var activeIndex = this.state.activeIndex;
+
+	            var row = data && data.map(function (item, i) {
+	                if (activeIndex === i) {
+	                    return _react2.default.createElement(
+	                        'li',
+	                        { key: 'move-list-item' + i, className: 'detail-item' },
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: 'detail-hide' },
+	                            _react2.default.createElement(
+	                                'div',
+	                                { className: 'detail-show' },
+	                                _react2.default.createElement(
+	                                    'span',
+	                                    { className: 'item-time' },
+	                                    item.time
+	                                ),
+	                                _react2.default.createElement(
+	                                    'span',
+	                                    { className: 'item-name' },
+	                                    item.name
+	                                ),
+	                                _react2.default.createElement(_bar2.default, self.getBarProps(item.data))
+	                            )
+	                        )
+	                    );
+	                }
+	                return _react2.default.createElement(
+	                    'li',
+	                    { key: 'move-list-item' + i, className: 'move-list-item' },
+	                    _react2.default.createElement(
+	                        'span',
+	                        { className: 'item-time' },
+	                        item.time
+	                    ),
+	                    _react2.default.createElement(
+	                        'span',
+	                        { className: 'item-name' },
+	                        item.name
+	                    ),
+	                    _react2.default.createElement(
+	                        'span',
+	                        { className: 'item-value' },
+	                        item.value
+	                    )
+	                );
+	            });
+	            return row;
+	        }
+	    }, {
+	        key: 'getBarProps',
+	        value: function getBarProps(data) {
+	            if (!data) {
+	                return;
+	            }
+	            var props = {
+	                width: 450,
+	                height: 100,
+	                duration: 1000, //柱子动效时长
+	                data: data,
+	                fillColor: "#668B8B",
+	                strokeColor: '#668B8B',
+	                textSize: 12,
+	                label: false,
+	                rectPadding: 8,
+	                xAxisConfig: {
+	                    display: false
+	                },
+	                yAxisConfig: {
+	                    display: false
+	                }
+	            };
+	            return props;
+	        }
+	    }, {
+	        key: 'componentDidMount',
+	        value: function componentDidMount() {
+	            var _this2 = this;
+
+	            var duration = this.props.duration;
+
+	            this.timer = setInterval(function () {
+	                _this2.changeIndex();
+	            }, duration);
+	        }
+	    }, {
+	        key: 'componentWillUnmount',
+	        value: function componentWillUnmount() {
+	            this.timer && clearInterval(this.timer);
+	        }
+	    }, {
+	        key: 'changeIndex',
+	        value: function changeIndex() {
+	            var data = this.props.data;
+	            var activeIndex = this.state.activeIndex;
+
+	            if (activeIndex === data.length - 1) {
+	                activeIndex = 0;
+	            } else {
+	                activeIndex = activeIndex + 1;
+	            }
+	            this.setState({ activeIndex: activeIndex });
+	        }
+	    }, {
+	        key: 'getMoveBoxSty',
+	        value: function getMoveBoxSty() {
+	            var activeIndex = this.state.activeIndex;
+
+	            var initTop = 28,
+	                curTop = 0;
+	            if (activeIndex === 0) {
+	                curTop = initTop;
+	            } else {
+	                curTop = 28 + activeIndex * 42;
+	            }
+	            var sty = {
+	                top: curTop + 'px'
+	            };
+	            return sty;
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            var self = this;
+	            var rows = this.getRows();
+	            var sty = this.getMoveBoxSty();
+	            return _react2.default.createElement(
+	                'div',
+	                { className: 'app-move-list' },
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'move-box', style: sty },
+	                    _react2.default.createElement('div', { className: 'move-box-hide' })
+	                ),
+	                _react2.default.createElement(
+	                    'ul',
+	                    { className: 'item-wrapper' },
+	                    rows
+	                )
+	            );
+	        }
+	    }]);
+
+	    return MoveList;
+	}(_react.Component);
+
+	exports.default = MoveList;
+
+	MoveList.defaultProps = {
+	    duration: 5000, //动效时长
+	    activeIndex: 0
+	};
+
+/***/ },
+/* 256 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(257);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(6)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/less-loader/index.js!./list.less", function() {
+				var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/less-loader/index.js!./list.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 257 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(5)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".app-move-list {\n  background: #060b15;\n  width: 600px;\n}\n.app-move-list .move-box {\n  position: relative;\n  width: 475px;\n  height: 105px;\n  top: 28px;\n  left: 57px;\n  border: 2px solid #F0FFF0;\n  border-radius: 10px;\n  z-index: 1;\n  box-shadow: 0 0 30px #F0FFF0;\n  transition: top 0.5s;\n}\n.app-move-list .move-box .move-box-hide {\n  width: 475px;\n  height: 105px;\n  border-radius: 10px;\n}\n.app-move-list .item-wrapper {\n  margin-left: 30px;\n  position: relative;\n  top: -95px;\n}\n.app-move-list .item-wrapper .move-list-item {\n  width: 450px;\n  border: 1px solid #668B8B;\n  height: 40px;\n  list-style: none;\n  color: #668B8B;\n  animation: 0.8s showItem;\n}\n.app-move-list .item-wrapper .move-list-item .item-time {\n  position: relative;\n  top: 12px;\n  left: 5px;\n}\n.app-move-list .item-wrapper .move-list-item .item-name {\n  position: relative;\n  left: 50px;\n  top: 12px;\n}\n.app-move-list .item-wrapper .move-list-item .item-value {\n  position: relative;\n  top: 12px;\n  float: right;\n  margin-right: 15px;\n}\n@keyframes showItem {\n  0% {\n    opacity: 0;\n  }\n  100% {\n    opacity: 1;\n  }\n}\n.app-move-list .item-wrapper .detail-item {\n  width: 470px;\n  height: 105px;\n  list-style: none;\n  color: #668B8B;\n  position: relative;\n  left: -10px;\n}\n.app-move-list .item-wrapper .detail-item .detail-show {\n  width: 470px;\n  height: 105px;\n  color: #668B8B;\n  animation: 1s show;\n}\n.app-move-list .item-wrapper .detail-item .detail-show .item-time {\n  padding: 5px 0px 0px 10px;\n}\n.app-move-list .item-wrapper .detail-item .detail-show .item-name {\n  padding-left: 10px;\n}\n.app-move-list .item-wrapper .detail-item .detail-show .item-title {\n  position: relative;\n  top: 55px;\n  left: -55px;\n}\n.app-move-list .item-wrapper .detail-item .detail-show .bar-container {\n  position: relative;\n  left: 10px;\n}\n@keyframes show {\n  0% {\n    opacity: 0;\n  }\n  50% {\n    opacity: 0;\n  }\n  100% {\n    opacity: 1;\n  }\n}\n.app-move-list .item-wrapper .detail-item .detail-hide {\n  width: 470px;\n  height: 105px;\n  color: #668B8B;\n  animation: 1s hide;\n  animation-delay: 4s;\n}\n@keyframes hide {\n  0% {\n    opacity: 1;\n  }\n  100% {\n    opacity: 0;\n  }\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 258 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	          value: true
+	});
+	var INTRODUCTION = exports.INTRODUCTION = {
+	          title: '列表动态展示',
+	          context: 'js结合css3动画完成，信息内容主要包括姓名，事项，柱形图等，组件还未进一步抽离，以后更新。配置信息如下：' + '&data: 支持对象数组' + '&duration: 整型，表示列表切换间隔时长' + '&activeIndex: 整型，指定初始化时先展示条目的索引'
+	};
+
+/***/ },
+/* 259 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(7);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _loading = __webpack_require__(260);
+
+	var _loading2 = _interopRequireDefault(_loading);
+
+	var _load = __webpack_require__(263);
+
+	var _load2 = _interopRequireDefault(_load);
+
+	var _title = __webpack_require__(250);
+
+	var _title2 = _interopRequireDefault(_title);
+
+	var _introduce = __webpack_require__(266);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Demo = function (_Component) {
+	  _inherits(Demo, _Component);
+
+	  function Demo(props) {
+	    _classCallCheck(this, Demo);
+
+	    var _this = _possibleConstructorReturn(this, (Demo.__proto__ || Object.getPrototypeOf(Demo)).call(this, props));
+
+	    _this.state = {};
+	    return _this;
+	  }
+
+	  _createClass(Demo, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(_title2.default, _introduce.INTRODUCTION),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'demo-wrapper' },
+	          _react2.default.createElement(_load2.default, null)
+	        )
+	      );
+	    }
+	  }]);
+
+	  return Demo;
+	}(_react.Component);
+
+	exports.default = Demo;
+
+/***/ },
+/* 260 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(7);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	__webpack_require__(261);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Load = function (_Component) {
+	  _inherits(Load, _Component);
+
+	  function Load(props) {
+	    _classCallCheck(this, Load);
+
+	    var _this = _possibleConstructorReturn(this, (Load.__proto__ || Object.getPrototypeOf(Load)).call(this, props));
+
+	    _this.state = {
+	      deg: 0
+	    };
+	    return _this;
+	  }
+
+	  _createClass(Load, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      var canvas = document.getElementById('loading1');
+	      var cans = canvas.getContext('2d');
+	      cans.beginPath();
+	      var circle = {
+	        x: 40,
+	        y: 40,
+	        r: 25
+	      };
+	      cans.arc(circle.x, circle.y, circle.r, 0, Math.PI / 2, true);
+
+	      var linear_gradient = cans.createLinearGradient(0, 10, 170, -120);
+	      linear_gradient.addColorStop(0, '#262626');
+	      linear_gradient.addColorStop(0.25, '#797979');
+	      linear_gradient.addColorStop(0.4, '#FFFFFF');
+	      linear_gradient.addColorStop(0.75, '#FFFFFF');
+	      cans.strokeStyle = linear_gradient;
+	      cans.lineWidth = 8;
+	      cans.stroke();
+
+	      var self = this;
+	      this.timer = setInterval(function () {
+	        self.changeDeg();
+	      }, 50);
+	    }
+	  }, {
+	    key: 'changeDeg',
+	    value: function changeDeg() {
+	      var deg = this.state.deg;
+
+	      if (deg >= 360) {
+	        deg = 0;
+	      } else {
+	        deg = deg + 18;
+	      }
+	      this.setState({ deg: deg });
+	    }
+	  }, {
+	    key: 'componentWillUnmount',
+	    value: function componentWillUnmount() {
+	      this.timer && clearInterval(this.timer);
+	      this.timer = null;
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var deg = this.state.deg;
+
+	      var sty = {
+	        transform: 'rotate(' + deg + 'deg)'
+	      };
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'app-loading1', style: sty },
+	        _react2.default.createElement('canvas', { width: '80', height: '80', id: 'loading1' })
+	      );
+	    }
+	  }]);
+
+	  return Load;
+	}(_react.Component);
+
+	exports.default = Load;
+
+/***/ },
+/* 261 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(262);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(6)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/less-loader/index.js!./loading.less", function() {
+				var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/less-loader/index.js!./loading.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 262 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(5)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".app-loading1 {\n  width: 80px;\n  height: 80px;\n  margin-left: 80px;\n  margin-top: -50px;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 263 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(7);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	__webpack_require__(264);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Load = function (_Component) {
+	  _inherits(Load, _Component);
+
+	  function Load(props) {
+	    _classCallCheck(this, Load);
+
+	    var _this = _possibleConstructorReturn(this, (Load.__proto__ || Object.getPrototypeOf(Load)).call(this, props));
+
+	    _this.state = {
+	      data: 0.8
+	    };
+	    return _this;
+	  }
+
+	  _createClass(Load, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      var self = this;
+	      this.timer = setInterval(function () {
+	        self.changeData();
+	      }, 2000);
+	    }
+	  }, {
+	    key: 'changeData',
+	    value: function changeData() {
+	      var data = this.state.data;
+
+	      var num = Math.random();
+	      data = data + num > 1 ? 0 : data + num;
+	      this.setState({ data: data });
+	    }
+	  }, {
+	    key: 'componentWillUnmount',
+	    value: function componentWillUnmount() {
+	      this.timer && clearInterval(this.timer);
+	      this.timer = null;
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var data = this.state.data;
+
+	      var sty = {
+	        width: 264 * data + 'px'
+	      };
+	      var textSty = {};
+	      var showText = (data * 100).toFixed() + '%';
+	      if (data === 0) {
+	        textSty.color = '#BDBDBD', textSty.float = 'none';
+	      }
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'app-precision-bar' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'precision-bar', style: sty },
+	          _react2.default.createElement(
+	            'i',
+	            { style: textSty },
+	            showText
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return Load;
+	}(_react.Component);
+
+	exports.default = Load;
+
+/***/ },
+/* 264 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(265);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(6)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/less-loader/index.js!./load.less", function() {
+				var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/less-loader/index.js!./load.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 265 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(5)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".app-precision-bar {\n  width: 270px;\n  height: 24px;\n  border: 2px solid #BDBDBD;\n  border-radius: 14px;\n}\n.app-precision-bar .precision-bar {\n  height: 18px;\n  background: #BDBDBD;\n  margin-top: 3px;\n  border-radius: 8px;\n  margin-left: 3px;\n  transition: width 0.5s;\n}\n.app-precision-bar .precision-bar i {\n  float: right;\n  display: block;\n  margin-right: 10px;\n  margin-top: -2px;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 266 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	          value: true
+	});
+	var INTRODUCTION = exports.INTRODUCTION = {
+	          title: '进度条',
+	          context: '不同款式进度条,后续更新'
+	};
+
+/***/ },
+/* 267 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	__webpack_require__(268);
+
+	var _react = __webpack_require__(7);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _data = __webpack_require__(271);
+
+	var _title = __webpack_require__(250);
+
+	var _title2 = _interopRequireDefault(_title);
+
+	var _introduce = __webpack_require__(272);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Clip = function (_Component) {
+	    _inherits(Clip, _Component);
+
+	    function Clip(props) {
+	        _classCallCheck(this, Clip);
+
+	        var _this = _possibleConstructorReturn(this, (Clip.__proto__ || Object.getPrototypeOf(Clip)).call(this, props));
+
+	        _this.state = {
+	            activeIndex: 0
+	        };
+	        return _this;
+	    }
+
+	    _createClass(Clip, [{
+	        key: 'componentDidMount',
+	        value: function componentDidMount() {
+	            var _this2 = this;
+
+	            this.timer = setInterval(function () {
+	                _this2.changeIndex();
+	            }, 2000);
+	        }
+	    }, {
+	        key: 'changeIndex',
+	        value: function changeIndex() {
+	            var activeIndex = this.state.activeIndex;
+
+	            if (activeIndex === _data.category.length - 1) {
+	                activeIndex = 0;
+	            } else {
+	                activeIndex = activeIndex + 1;
+	            }
+	            this.setState({ activeIndex: activeIndex });
+	        }
+	    }, {
+	        key: 'componentWillUnmount',
+	        value: function componentWillUnmount() {
+	            this.timer && clearInterval(this.timer);
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'div',
+	                { className: 'app-clip' },
+	                _react2.default.createElement(_title2.default, _introduce.INTRODUCTION),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'demo-wrapper' },
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'container' },
+	                        _react2.default.createElement('div', { className: 'content ' + _data.category[this.state.activeIndex].type }),
+	                        _react2.default.createElement(
+	                            'span',
+	                            { className: 'title' },
+	                            _data.category[this.state.activeIndex].type
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'container' },
+	                        _react2.default.createElement('div', { className: 'animate-com' }),
+	                        _react2.default.createElement(
+	                            'span',
+	                            { className: 'title' },
+	                            'mouse hover me'
+	                        )
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+
+	    return Clip;
+	}(_react.Component);
+
+	exports.default = Clip;
+
+/***/ },
+/* 268 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(269);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(6)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/less-loader/index.js!./clip.less", function() {
+				var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/less-loader/index.js!./clip.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 269 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(5)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".app-clip .container {\n  width: 300px;\n  height: 300px;\n  text-align: center;\n  float: left;\n  margin-right: 90px;\n}\n.app-clip .container .content {\n  width: 200px;\n  height: 200px;\n  background: url(" + __webpack_require__(270) + ") no-repeat;\n  background-size: cover;\n  margin: 0 auto;\n}\n.app-clip .container .title {\n  color: #333;\n  display: inline-block;\n  margin-top: 20px;\n}\n.app-clip .container .message {\n  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);\n}\n.app-clip .container .triangle {\n  -webkit-clip-path: polygon(50% 0%, 100% 100%, 0% 100%);\n}\n.app-clip .container .trapezoid {\n  -webkit-clip-path: polygon(20% 10%, 80% 10%, 100% 90%, 0% 90%);\n}\n.app-clip .container .parallelogram {\n  -webkit-clip-path: polygon(20% 10%, 80% 10%, 60% 90%, 0% 90%);\n}\n.app-clip .container .rhombus {\n  -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);\n}\n.app-clip .container .pentagon {\n  -webkit-clip-path: polygon(50% 0%, 100% 40%, 80% 100%, 20% 100%, 0% 40%);\n}\n.app-clip .container .hexagon {\n  -webkit-clip-path: polygon(20% 5%, 80% 5%, 100% 50%, 80% 95%, 20% 95%, 0% 50%);\n}\n.app-clip .container .octagon {\n  -webkit-clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);\n}\n.app-clip .container .rabbet {\n  -webkit-clip-path: polygon(20% 0%, 80% 0%, 80% 20%, 100% 20%, 100% 80%, 80% 80%, 80% 100%, 20% 100%, 20% 80%, 0% 80%, 0% 20%, 20% 20%);\n}\n.app-clip .container .cross {\n  -webkit-clip-path: polygon(40% 0%, 60% 0%, 60% 20%, 90% 20%, 90% 40%, 60% 40%, 60% 100%, 40% 100%, 40% 40%, 10% 40%, 10% 20%, 40% 20%);\n}\n.app-clip .container .left-arrow {\n  -webkit-clip-path: polygon(30% 0%, 30% 20%, 100% 20%, 100% 80%, 30% 80%, 30% 100%, 0% 50%);\n}\n.app-clip .container .right-arrow {\n  -webkit-clip-path: polygon(70% 0%, 100% 50%, 70% 100%, 70% 80%, 0% 80%, 0% 20%, 70% 20%);\n}\n.app-clip .container .left-point {\n  -webkit-clip-path: polygon(10% 0%, 30% 0%, 80% 50%, 30% 100%, 10% 100%, 60% 50%);\n}\n.app-clip .container .right-point {\n  -webkit-clip-path: polygon(0% 50%, 50% 0%, 70% 0%, 20% 50%, 70% 100%, 50% 100%);\n}\n.app-clip .container .star {\n  -webkit-clip-path: polygon(50% 0%, 63% 38%, 100% 38%, 69% 59%, 82% 100%, 50% 75%, 18% 100%, 31% 59%, 0 38%, 37% 38%);\n}\n.app-clip .container .close {\n  -webkit-clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);\n}\n.app-clip .container .complex {\n  -webkit-clip-path: polygon(10% 0%, 90% 0%, 95% 5%, 95% 10%, 100% 12%, 100% 88%, 95% 90%, 95% 95%, 90% 100%, 10% 100%, 5% 95%, 5% 90%, 0% 88%, 0% 12%, 5% 10%, 5% 5%);\n}\n.app-clip .container .animate-com {\n  width: 200px;\n  height: 200px;\n  background: url(" + __webpack_require__(270) + ") no-repeat;\n  background-size: cover;\n  margin: 0 auto;\n  transition: 0.5s -webkit-clip-path;\n  -webkit-clip-path: polygon(50% 0%, 100% 0%, 100% 38%, 100% 100%, 82% 100%, 50% 100%, 18% 100%, 0% 100%, 0% 38%, 0% 0%);\n}\n.app-clip .container .animate-com:hover {\n  -webkit-clip-path: polygon(50% 0%, 63% 38%, 100% 38%, 69% 59%, 82% 100%, 50% 75%, 18% 100%, 31% 59%, 0% 38%, 37% 38%);\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 270 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "85126422b15acb8d1b2b0d8231444fd3.jpg";
+
+/***/ },
+/* 271 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	var category = exports.category = [{ type: 'message' }, { type: 'triangle' }, { type: 'trapezoid' }, { type: 'pentagon' }, { type: 'rabbet' }, { type: 'parallelogram' }, { type: 'octagon' }, { type: 'left-arrow' }, { type: 'rhombus' }, { type: 'right-arrow' }, { type: 'hexagon' }, { type: 'left-point' }, { type: 'cross' }, { type: 'right-point' }, { type: 'star' }, { type: 'close' }, { type: 'complex' }];
+
+/***/ },
+/* 272 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	          value: true
+	});
+	var INTRODUCTION = exports.INTRODUCTION = {
+	          title: 'CSS3 clip-path',
+	          context: 'clip-path包括圆(circle),椭圆(ellipse),圆角(inset),多变形(polygon)遮罩剪裁，本demo只展示多边形遮罩'
+	};
+
+/***/ },
+/* 273 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	__webpack_require__(274);
+
+	var _react = __webpack_require__(7);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _circle_timer = __webpack_require__(276);
+
+	var _circle_timer2 = _interopRequireDefault(_circle_timer);
+
+	var _circle_timer3 = __webpack_require__(277);
+
+	var _circle_timer4 = _interopRequireDefault(_circle_timer3);
+
+	var _title = __webpack_require__(250);
+
+	var _title2 = _interopRequireDefault(_title);
+
+	var _introduce = __webpack_require__(280);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Demo = function (_Component) {
+	    _inherits(Demo, _Component);
+
+	    function Demo(props) {
+	        _classCallCheck(this, Demo);
+
+	        var _this = _possibleConstructorReturn(this, (Demo.__proto__ || Object.getPrototypeOf(Demo)).call(this, props));
+
+	        _this.state = {
+	            reload: false
+	        };
+	        return _this;
+	    }
+
+	    _createClass(Demo, [{
+	        key: 'getProps',
+	        value: function getProps() {
+	            var props = {
+	                width: 100,
+	                height: 100,
+	                radius: 20,
+	                time: 15 * 1000,
+	                ringColor: '#999',
+	                defaultColor: '#333',
+	                lineWidth: 5
+	            };
+	            return props;
+	        }
+	    }, {
+	        key: 'getFullProps',
+	        value: function getFullProps() {
+	            var props = {
+	                width: 100,
+	                height: 100,
+	                radius: 15,
+	                time: 15 * 1000,
+	                ringColor: '#999',
+	                defaultColor: '#333',
+	                lineWidth: 30
+	            };
+	            return props;
+	        }
+	    }, {
+	        key: 'reload',
+	        value: function reload() {
+	            this.setState({ reload: true });
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            console.log('demo render');
+	            return _react2.default.createElement(
+	                'div',
+	                { className: 'app-circle' },
+	                _react2.default.createElement(_title2.default, _introduce.INTRODUCTION),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'demo-wrapper' },
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'demo-container' },
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: 'demo' },
+	                            _react2.default.createElement(_circle_timer2.default, this.getProps())
+	                        ),
+	                        _react2.default.createElement(
+	                            'div',
+	                            { className: 'demo' },
+	                            _react2.default.createElement(_circle_timer2.default, this.getFullProps())
+	                        ),
+	                        _react2.default.createElement(
+	                            'button',
+	                            { className: 'button', onClick: this.reload.bind(this) },
+	                            'reload'
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'demo-container' },
+	                        _react2.default.createElement(_circle_timer4.default, this.getProps())
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+
+	    return Demo;
+	}(_react.Component);
+
+	exports.default = Demo;
+
+/***/ },
+/* 274 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(275);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(6)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/less-loader/index.js!./demo.less", function() {
+				var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/less-loader/index.js!./demo.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 275 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(5)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".app-circle .demo-container {\n  background: #000;\n  width: 300px;\n  height: 300px;\n  float: left;\n  margin-right: 40px;\n}\n.app-circle .demo-container .demo {\n  width: 100px;\n  height: 100px;\n  float: left;\n  margin: 50px 20px 0px 22px;\n  transform: rotate(-90deg);\n}\n.app-circle .demo-container .button {\n  position: relative;\n  top: 90px;\n  left: 122px;\n  width: 60px;\n  height: 30px;\n  border: none;\n  border-radius: 5px;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 276 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -44369,9 +45510,9 @@
 
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var d3 = __webpack_require__(249);
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * 普通环形计时器，时间到即停
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
 
 	var Main = function (_Component) {
 	    _inherits(Main, _Component);
@@ -44382,304 +45523,235 @@
 	        var _this = _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
 
 	        _this.state = {};
-	        _this.water_gauge = null;
+	        _this.currentTime = 0;
+	        _this.currentValue = 0;
 	        return _this;
 	    }
 
 	    _createClass(Main, [{
 	        key: 'componentDidMount',
 	        value: function componentDidMount() {
-	            this.initWaterLevel(this.props.config);
-	            this.updateData();
+	            var _this2 = this;
+
+	            this.timer = setInterval(function () {
+	                _this2.start();
+	            }, 10);
 	        }
 	    }, {
-	        key: 'componentWillReceiveProps',
-	        value: function componentWillReceiveProps() {
-	            var props = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-	            var state = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+	        key: 'componentDidUpdate',
+	        value: function componentDidUpdate() {
+	            var _this3 = this;
 
-	            if (props.data.id !== this.props.data.id) {
-	                this.updateData(props.data);
-	            } else {
-	                return false;
+	            this.currentTime = 0;
+	            this.currentValue = 0;
+	            this.timer = setInterval(function () {
+	                _this3.start();
+	            }, 10);
+	        }
+	    }, {
+	        key: 'componentWillUnmount',
+	        value: function componentWillUnmount() {
+	            this.timer && clearInterval(this.timer);
+	        }
+	    }, {
+	        key: 'start',
+	        value: function start() {
+	            var time = this.props.time;
+
+	            this.currentTime += 10;
+	            this.currentValue = 2 * this.currentTime / time;
+	            this.draw();
+	        }
+	    }, {
+	        key: 'draw',
+	        value: function draw() {
+	            var _props = this.props,
+	                width = _props.width,
+	                height = _props.height,
+	                radius = _props.radius,
+	                defaultColor = _props.defaultColor,
+	                ringColor = _props.ringColor,
+	                lineWidth = _props.lineWidth;
+
+	            if (this.currentValue > 2) {
+	                //判断是否已到时
+	                this.currentValue = 0;
+	                this.timer && clearInterval(this.timer);
 	            }
-	        }
-	    }, {
-	        key: 'initWaterLevel',
-	        value: function initWaterLevel(cfg) {
-	            var idDom = cfg.idDom,
-	                width = cfg.width,
-	                height = cfg.height;
-
-	            var svg = d3.select('#' + idDom).append('svg').attr('width', width).attr('height', height).attr('id', idDom + '-svg');
-
-	            var config = this.liquidFillGaugeDefaultSettings();
-	            config.circleThickness = 0.05;
-	            config.textVertPosition = 0.2;
-	            config.waveAnimateTime = 1000;
-	            this.water_gauge = this.loadLiquidFillGauge(idDom + "-svg", 30, config);
-	        }
-	    }, {
-	        key: 'liquidFillGaugeDefaultSettings',
-	        value: function liquidFillGaugeDefaultSettings() {
-	            var props = this.props.config;
-	            var outerRect = props.outerRect,
-	                innerRect = props.innerRect,
-	                innerCircle = props.innerCircle,
-	                outerCircle = props.outerCircle;
-
-	            return {
-	                minValue: 0, // The gauge minimum value.
-	                maxValue: 100, // The gauge maximum value.
-	                circleThickness: 0.05, // The outer circle thickness as a percentage of it's radius.
-	                circleFillGap: 0.05, // The size of the gap between the outer circle and wave circle as a percentage of the outer circles radius.
-	                outerColor: outerCircle.fillColor || "rgba(54,54,54,0.4)", // The color of the outer circle.
-	                waveHeight: 0.05, // The wave height as a percentage of the radius of the wave circle.
-	                waveCount: 1, // The number of full waves per width of the wave circle.
-	                waveRiseTime: 1000, // The amount of time in milliseconds for the wave to rise from 0 to it's final height.
-	                waveAnimateTime: 18000, // The amount of time in milliseconds for a full wave to enter the wave circle.
-	                waveRise: true, // Control if the wave should rise from 0 to it's full height, or start at it's full height.
-	                waveHeightScaling: true, // Controls wave size scaling at low and high fill percentages. When true, wave height reaches it's maximum at 50% fill, and minimum at 0% and 100% fill. This helps to prevent the wave from making the wave circle from appear totally full or empty when near it's minimum or maximum fill.
-	                waveAnimate: true, // Controls if the wave scrolls or is static.
-	                waveColor: innerCircle.fillColor || "rgba(85, 180, 255,0.5)", // The color of the fill wave.
-	                waveOffset: 0, // The amount to initially offset the wave. 0 = no offset. 1 = offset of one full wave.
-	                textVertPosition: .5, // The height at which to display the percentage text withing the wave circle. 0 = bottom, 1 = top.
-	                textSize: props.textSize || 0.8, // The relative height of the text to display in the wave circle. 1 = 50%
-	                valueCountUp: true, // If true, the displayed value counts up from 0 to it's final value upon loading. If false, the final value is displayed.
-	                displayPercent: true, // If true, a % symbol is displayed after the value.
-	                textColor: props.tectColor || "#C2E2F9", // The color of the value text when the wave does not overlap it.
-	                waveTextColor: props.waveTextColor || "#A4DBf8", // The color of the value text when the wave overlaps it.
-
-	                innerCircleR: innerCircle.r || 80,
-	                outerCircleR: outerCircle.r || 80
+	            var canvas = this.refs.circle;
+	            var ctx = canvas.getContext("2d");
+	            canvas.width = width;
+	            canvas.height = height;
+	            var circle = {
+	                x: width / 2,
+	                y: height / 2,
+	                r: radius > Math.min(width, height) / 2 ? Math.min(width, height) / 2 - 10 : radius
 	            };
-	        }
-	    }, {
-	        key: 'loadLiquidFillGauge',
-	        value: function loadLiquidFillGauge(elementId, value, config) {
-	            if (config == null) config = this.liquidFillGaugeDefaultSettings();
-
-	            var gauge = d3.select("#" + elementId);
-	            // var radius = Math.min(parseInt(gauge.style("width")), parseInt(gauge.style("height")))/2;
-	            var radius = config.outerCircleR;
-	            var locationX = parseInt(gauge.style("width")) / 2 - radius;
-	            var locationY = parseInt(gauge.style("height")) / 2 - radius;
-	            var fillPercent = Math.max(config.minValue, Math.min(config.maxValue, value)) / config.maxValue;
-
-	            var waveHeightScale;
-	            if (config.waveHeightScaling) {
-	                waveHeightScale = d3.scaleLinear().range([0, config.waveHeight, 0]).domain([0, 50, 100]);
-	            } else {
-	                waveHeightScale = d3.scaleLinear().range([config.waveHeight, config.waveHeight]).domain([0, 100]);
-	            }
-
-	            var textPixels = config.textSize * radius / 2;
-	            var textFinalValue = parseFloat(value).toFixed(2);
-	            var textStartValue = config.valueCountUp ? config.minValue : textFinalValue;
-	            var percentText = config.displayPercent ? "%" : "";
-	            var circleThickness = config.circleThickness * radius;
-	            var circleFillGap = config.circleFillGap * radius;
-	            var fillCircleMargin = circleThickness + circleFillGap;
-	            var fillCircleRadius = radius - fillCircleMargin;
-	            var waveHeight = fillCircleRadius * waveHeightScale(fillPercent * 100);
-
-	            var waveLength = fillCircleRadius * 2 / config.waveCount;
-	            var waveClipCount = 1 + config.waveCount;
-	            var waveClipWidth = waveLength * waveClipCount;
-
-	            // Rounding functions so that the correct number of decimal places is always displayed as the value counts up.
-	            var textRounder = function textRounder(value) {
-	                return Math.round(value);
-	            };
-	            if (parseFloat(textFinalValue) != parseFloat(textRounder(textFinalValue))) {
-	                textRounder = function textRounder(value) {
-	                    return parseFloat(value).toFixed(1);
-	                };
-	            }
-	            if (parseFloat(textFinalValue) != parseFloat(textRounder(textFinalValue))) {
-	                textRounder = function textRounder(value) {
-	                    return parseFloat(value).toFixed(2);
-	                };
-	            }
-
-	            // Data for building the clip wave area.
-	            var data = [];
-	            for (var i = 0; i <= 40 * waveClipCount; i++) {
-	                data.push({ x: i / (40 * waveClipCount), y: i / 40 });
-	            }
-
-	            // Scales for drawing the outer Rect.
-	            var gaugeCircleX = d3.scaleLinear().range([0, 2 * Math.PI]).domain([0, 1]);
-	            var gaugeCircleY = d3.scaleLinear().range([0, radius]).domain([0, radius]);
-
-	            // Scales for controlling the size of the clipping path.
-	            var waveScaleX = d3.scaleLinear().range([0, waveClipWidth]).domain([0, 1]);
-	            var waveScaleY = d3.scaleLinear().range([0, waveHeight]).domain([0, 1]);
-
-	            // Scales for controlling the position of the clipping path.
-	            var waveRiseScale = d3.scaleLinear()
-	            // The clipping area size is the height of the fill circle + the wave height, so we position the clip wave
-	            // such that the it will overlap the fill circle at all when at 0%, and will totally cover the fill
-	            // circle at 100%.
-	            .range([fillCircleMargin + fillCircleRadius * 2 + waveHeight, fillCircleMargin - waveHeight]).domain([0, 1]);
-	            var waveAnimateScale = d3.scaleLinear().range([0, waveClipWidth - fillCircleRadius * 2]) // Push the clip area one full wave then snap back.
-	            .domain([0, 1]);
-
-	            // Scale for controlling the position of the text within the gauge.
-	            var textRiseScaleY = d3.scaleLinear().range([fillCircleMargin + fillCircleRadius * 2, fillCircleMargin + textPixels * 0.7]).domain([0, 1]);
-
-	            // Center the gauge within the parent SVG.
-	            var gaugeGroup = gauge.append("g").attr('transform', 'translate(' + locationX + ',' + locationY + ')');
-
-	            // Draw the outer circle.
-	            // debugger
-	            var gaugeCircleArc = d3.arc().startAngle(gaugeCircleX(0)).endAngle(gaugeCircleX(1)).outerRadius(gaugeCircleY(radius)).innerRadius(gaugeCircleY(radius - circleThickness));
-	            gaugeGroup.append("path").attr("d", gaugeCircleArc).style("fill", config.outerColor).attr('transform', 'translate(' + radius + ',' + radius + ')');
-
-	            // Text where the wave does not overlap.
-	            var text1 = gaugeGroup.append("text").text(textRounder(textStartValue) + percentText).attr("class", "liquidFillGaugeText").attr("text-anchor", "middle").attr("font-size", textPixels + "px").style("fill", config.textColor).attr('transform', 'translate(' + radius + ',' + textRiseScaleY(config.textVertPosition) + ')');
-
-	            // The clipping wave area.
-	            var clipArea = d3.area().x(function (d) {
-	                return waveScaleX(d.x);
-	            }).y0(function (d) {
-	                return waveScaleY(Math.sin(Math.PI * 2 * config.waveOffset * -1 + Math.PI * 2 * (1 - config.waveCount) + d.y * 2 * Math.PI));
-	            }).y1(function (d) {
-	                return fillCircleRadius * 2 + waveHeight;
-	            });
-	            var waveGroup = gaugeGroup.append("defs").append("clipPath").attr("id", "clipWave" + elementId);
-	            var wave = waveGroup.append("path").datum(data).attr("d", clipArea).attr("T", 0);
-
-	            // The inner rect with the clipping wave attached.
-	            var fillCircleGroup = gaugeGroup.append("g").attr("clip-path", "url(#clipWave" + elementId + ")");
-	            fillCircleGroup.append("circle").attr("r", fillCircleRadius).attr("cx", radius).attr('cy', radius).style("fill", config.waveColor);
-
-	            // Text where the wave does overlap.
-	            var text2 = fillCircleGroup.append("text").text(textRounder(textStartValue) + percentText).attr("class", "liquidFillGaugeText").attr("text-anchor", "middle").attr("font-size", textPixels + "px").style("fill", config.waveTextColor).attr('transform', 'translate(' + radius + ',' + textRiseScaleY(config.textVertPosition) + ')');
-
-	            // Make the value count up.
-	            if (config.valueCountUp) {
-	                var textTween = function textTween() {
-	                    var i = d3.interpolate(this.textContent, textFinalValue);
-	                    var self = this;
-	                    return function (t) {
-	                        self.textContent = textRounder(i(t)) + percentText;
-	                    };
-	                };
-	                text1.transition().duration(config.waveRiseTime).tween("text", textTween);
-	                text2.transition().duration(config.waveRiseTime).tween("text", textTween);
-	            }
-
-	            // Make the wave rise. wave and waveGroup are separate so that horizontal and vertical movement can be controlled independently.
-	            var waveGroupXPosition = fillCircleMargin + fillCircleRadius * 2 - waveClipWidth;
-	            if (config.waveRise) {
-	                waveGroup.attr('transform', 'translate(' + waveGroupXPosition + ',' + waveRiseScale(0) + ')').transition().duration(config.waveRiseTime).attr('transform', 'translate(' + waveGroupXPosition + ',' + waveRiseScale(fillPercent) + ')').each('start', function (d, i) {
-	                    wave.attr('transform', 'translate(1,0)');
-	                }); // This transform is necessary to get the clip wave positioned correctly when waveRise=true and waveAnimate=false. The wave will not position correctly without this, but it's not clear why this is actually necessary.
-	            } else {
-	                waveGroup.attr('transform', 'translate(' + waveGroupXPosition + ',' + waveRiseScale(fillPercent) + ')');
-	            }
-
-	            if (config.waveAnimate) animateWave();
-
-	            function animateWave() {
-	                wave.attr('transform', 'translate(' + waveAnimateScale(wave.attr('T')) + ',0)');
-	                wave.transition().duration(config.waveAnimateTime * (1 - wave.attr('T'))).ease(d3.easeLinear).attr('transform', 'translate(' + waveAnimateScale(1) + ',0)').attr('T', 1).each('end', function (d, i) {
-	                    wave.attr('T', 0);
-	                    animateWave(config.waveAnimateTime);
-	                });
-	            }
-
-	            function GaugeUpdater() {
-	                this.update = function (value) {
-	                    var newFinalValue = parseFloat(value).toFixed(2);
-	                    var textRounderUpdater = function textRounderUpdater(value) {
-	                        return Math.round(value);
-	                    };
-	                    if (parseFloat(newFinalValue) != parseFloat(textRounderUpdater(newFinalValue))) {
-	                        textRounderUpdater = function textRounderUpdater(value) {
-	                            return parseFloat(value).toFixed(1);
-	                        };
-	                    }
-	                    if (parseFloat(newFinalValue) != parseFloat(textRounderUpdater(newFinalValue))) {
-	                        textRounderUpdater = function textRounderUpdater(value) {
-	                            return parseFloat(value).toFixed(2);
-	                        };
-	                    }
-
-	                    var textTween = function textTween() {
-	                        var i = d3.interpolate(this.textContent, parseFloat(value).toFixed(2));
-	                        var self = this;
-	                        return function (t) {
-	                            self.textContent = textRounderUpdater(i(t)) + percentText;
-	                        };
-	                    };
-
-	                    text1.transition().duration(config.waveRiseTime).tween("text", textTween);
-	                    text2.transition().duration(config.waveRiseTime).tween("text", textTween);
-
-	                    var fillPercent = Math.max(config.minValue, Math.min(config.maxValue, value)) / config.maxValue;
-	                    var waveHeight = fillCircleRadius * waveHeightScale(fillPercent * 100);
-	                    var waveRiseScale = d3.scaleLinear()
-	                    // The clipping area size is the height of the fill circle + the wave height, so we position the clip wave
-	                    // such that the it will overlap the fill circle at all when at 0%, and will totally cover the fill
-	                    // circle at 100%.
-	                    .range([fillCircleMargin + fillCircleRadius * 2 + waveHeight, fillCircleMargin - waveHeight]).domain([0, 1]);
-	                    var newHeight = waveRiseScale(fillPercent);
-	                    var waveScaleX = d3.scaleLinear().range([0, waveClipWidth]).domain([0, 1]);
-	                    var waveScaleY = d3.scaleLinear().range([0, waveHeight]).domain([0, 1]);
-	                    var newClipArea;
-	                    if (config.waveHeightScaling) {
-	                        newClipArea = d3.area().x(function (d) {
-	                            return waveScaleX(d.x);
-	                        }).y0(function (d) {
-	                            return waveScaleY(Math.sin(Math.PI * 2 * config.waveOffset * -1 + Math.PI * 2 * (1 - config.waveCount) + d.y * 2 * Math.PI));
-	                        }).y1(function (d) {
-	                            return fillCircleRadius * 2 + waveHeight;
-	                        });
-	                    } else {
-	                        newClipArea = clipArea;
-	                    }
-
-	                    var newWavePosition = config.waveAnimate ? waveAnimateScale(1) : 0;
-	                    wave.transition().duration(0).duration(config.waveAnimate ? config.waveAnimateTime * (1 - wave.attr('T')) : config.waveRiseTime).ease(d3.easeLinear).attr('d', newClipArea).attr('transform', 'translate(' + newWavePosition + ',0)').attr('T', '1').each('end', function (d, i) {
-	                        if (config.waveAnimate) {
-	                            wave.attr('transform', 'translate(' + waveAnimateScale(0) + ',0)');
-	                            animateWave(config.waveAnimateTime);
-	                        }
-	                    });
-	                    waveGroup.transition().duration(config.waveRiseTime).attr('transform', 'translate(' + waveGroupXPosition + ',' + newHeight + ')');
-	                };
-	            }
-	            return new GaugeUpdater();
-	        }
-	    }, {
-	        key: 'updateData',
-	        value: function updateData() {
-	            var data = this.props.data;
-	            /****   update water ball */
-
-	            if (!data) {
-	                return;
-	            }
-	            if (data.value === null || data.value === undefined) {
-	                d3.select('#waterbll-container').style('display', 'none');
-	            } else {
-	                var v = +data.value;
-	                d3.select('#card2police').style('display', 'block');
-	                this.water_gauge && this.water_gauge.update(v.toFixed(2) * 100);
-	            }
+	            //画底部背景
+	            ctx.beginPath();
+	            ctx.arc(circle.x, circle.y, circle.r, 0, Math.PI * 2, false);
+	            ctx.strokeStyle = defaultColor;
+	            ctx.lineWidth = lineWidth;
+	            ctx.stroke();
+	            //画圆环进度条
+	            ctx.beginPath();
+	            ctx.arc(circle.x, circle.y, circle.r, 0, Math.PI * this.currentValue, false);
+	            ctx.strokeStyle = ringColor;
+	            ctx.lineWidth = lineWidth;
+	            ctx.stroke();
 	        }
 	    }, {
 	        key: 'render',
 	        value: function render() {
-	            var _ref = this.props && this.props.config,
-	                idDom = _ref.idDom;
+	            return _react2.default.createElement('canvas', { ref: 'circle' });
+	        }
+	    }]);
+
+	    return Main;
+	}(_react.Component);
+
+	exports.default = Main;
+
+	Main.defaultProps = {
+	    width: 100, //canvas宽度
+	    height: 100, //canvas高度
+	    radius: 20, //圆半径
+	    time: 30 * 1000, //计时时长
+	    lineWidth: 5, //圆外边框宽度
+	    ringColor: '#999', //进度色
+	    defaultColor: '#333' //圆的底色
+	};
+
+/***/ },
+/* 277 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	__webpack_require__(278);
+
+	var _react = __webpack_require__(7);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * 类似音乐播放器里的进度，可手动暂停
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
+
+
+	var Main = function (_Component) {
+	    _inherits(Main, _Component);
+
+	    function Main(props) {
+	        _classCallCheck(this, Main);
+
+	        var _this = _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
+
+	        _this.state = {
+	            start: true
+	        };
+	        _this.currentTime = 0;
+	        _this.currentValue = 0;
+	        return _this;
+	    }
+
+	    _createClass(Main, [{
+	        key: 'componentDidMount',
+	        value: function componentDidMount() {
+	            this.draw();
+	        }
+	    }, {
+	        key: 'start',
+	        value: function start() {
+	            var _this2 = this;
+
+	            this.setState({ start: false });
+	            this.timer = setInterval(function () {
+	                _this2.count();
+	            }, 10);
+	        }
+	    }, {
+	        key: 'pause',
+	        value: function pause() {
+	            this.setState({ start: true });
+	            this.timer && clearInterval(this.timer);
+	        }
+	    }, {
+	        key: 'componentWillUnmount',
+	        value: function componentWillUnmount() {
+	            this.timer && clearInterval(this.timer);
+	        }
+	    }, {
+	        key: 'count',
+	        value: function count() {
+	            var time = this.props.time;
+
+	            this.currentTime += 10;
+	            this.currentValue = 2 * this.currentTime / time;
+	            this.draw();
+	        }
+	    }, {
+	        key: 'draw',
+	        value: function draw() {
+	            var _props = this.props,
+	                width = _props.width,
+	                height = _props.height,
+	                radius = _props.radius,
+	                defaultColor = _props.defaultColor,
+	                ringColor = _props.ringColor,
+	                lineWidth = _props.lineWidth;
+
+	            if (this.currentValue > 2) {
+	                //判断是否已到时
+	                this.currentValue = 0;
+	                this.currentTime = 0;
+	                this.setState({ start: true });
+	                this.timer && clearInterval(this.timer);
+	            }
+	            var canvas = this.refs.circle;
+	            var ctx = canvas.getContext("2d");
+	            canvas.width = width;
+	            canvas.height = height;
+	            var circle = {
+	                x: width / 2,
+	                y: height / 2,
+	                r: radius > Math.min(width, height) / 2 ? Math.min(width, height) / 2 - 10 : radius
+	            };
+	            //画底部背景
+	            ctx.beginPath();
+	            ctx.arc(circle.x, circle.y, circle.r, 0, Math.PI * 2, false);
+	            ctx.strokeStyle = defaultColor;
+	            ctx.lineWidth = lineWidth;
+	            ctx.stroke();
+	            //画圆环进度条
+	            ctx.beginPath();
+	            ctx.arc(circle.x, circle.y, circle.r, 0, Math.PI * this.currentValue, false);
+	            ctx.strokeStyle = ringColor;
+	            ctx.lineWidth = lineWidth;
+	            ctx.stroke();
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            var start = this.state.start;
 
 	            return _react2.default.createElement(
 	                'div',
-	                { className: 'app-circleBall' },
-	                _react2.default.createElement('div', { id: idDom })
+	                { className: 'canvas-wrapper' },
+	                _react2.default.createElement('canvas', { ref: 'circle' }),
+	                start ? _react2.default.createElement('i', { className: 'fa fa-play start-btn', onClick: this.start.bind(this) }) : _react2.default.createElement('i', { className: 'fa fa-pause pause-btn', onClick: this.pause.bind(this) })
 	            );
 	        }
 	    }]);
@@ -44688,6 +45760,71 @@
 	}(_react.Component);
 
 	exports.default = Main;
+
+
+	Main.defaultProps = {
+	    width: 100, //canvas宽度
+	    height: 100, //canvas高度
+	    radius: 20, //圆半径
+	    time: 30 * 1000, //计时时长
+	    lineWidth: 5, //圆外边框宽度
+	    ringColor: '#999', //进度色
+	    defaultColor: '#333' //圆的底色
+	};
+
+/***/ },
+/* 278 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(279);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(6)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/less-loader/index.js!./circle_timer2.less", function() {
+				var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/less-loader/index.js!./circle_timer2.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 279 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(5)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".canvas-wrapper {\n  margin: 0px;\n  transform: rotate(-90deg);\n}\n.canvas-wrapper .start-btn {\n  position: relative;\n  top: -42px;\n  left: -56px;\n  transform: rotate(90deg);\n}\n.canvas-wrapper .pause-btn {\n  position: relative;\n  top: -44px;\n  left: -56px;\n  transform: rotate(90deg);\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 280 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	          value: true
+	});
+	var INTRODUCTION = exports.INTRODUCTION = {
+	          title: '环形倒计时',
+	          context: '用canvas实现，demo1是普通的环形倒计时，时间可以用户自己定，时间到即停，配置信息如下：' + '&width和height分别表示 canvas的宽高' + '&radius: 圆的半径' + '&time: 需要计时的时长，单位为毫秒' + '&ringColor: 圆的进度色' + '&defaultColor: 圆的底色' + '&lineWidth: 数值型，进度条的宽度' + '& --------------------------' + '&demo2的话是模仿网易云音乐的播放器，可自行暂停／开始，配置信息基本同上'
+	};
 
 /***/ }
 /******/ ]);
