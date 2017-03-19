@@ -8,7 +8,7 @@ export default class Demo extends Component{
     constructor(props){
       super(props);
       this.state = {
-          data:{id:1, value:0.9}
+          data:{id:1, value:0.75}
       }
     }
 
