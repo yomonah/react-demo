@@ -1,0 +1,88 @@
+.pagination-wrapper{
+    padding: 10px;
+    border: 1px solid #ddd;
+    .pagination-bar{
+        margin-top:20px;
+        .page{
+            list-style: none;
+            display: inline-block;
+            margin-right: 5px;
+            a{
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                color: #285d96;
+                cursor: pointer;
+                text-align: center;
+                &:hover{
+                    text-decoration: none;
+                    background: #ddd;
+                }
+            }
+            &.active{
+                a{
+                    background: #ddd;
+                }
+            }
+            &.pre,&.next{
+                a{
+                    border:1px solid #ddd;
+                }
+            }
+            &.pre{
+                a:before{
+                    content:'<';
+                }
+            }
+            &.next{
+                a:before{
+                    content:'>';
+                }
+            }
+            &.disabled{
+                a{
+                    cursor: not-allowed;
+                    color: #ddd;
+                    &:hover{
+                        background: #fff;
+                    }
+                }
+            }
+        }
+        .simple-bar{    
+            display: inline-block;
+            margin-right: 8px;
+            color:#999;
+            .cur-page{
+                font-weight: bold;
+                color:#285d96;
+            }
+        }
+    }
+    .pagination-data{
+        .table-head{
+            .head-cell{
+                display: inline-block;
+                display: inline-block;
+                font-size: 14px;
+                font-weight: bold;
+                color: #333;
+            }
+        }
+        .table-body{
+            margin-top:5px;
+            .empty-warn{
+                text-align: center;
+                margin-top: 20px;
+                color:#666;
+            }
+            .item{
+                .item-cell{
+                    list-style: none;
+                    display: inline-block;
+                    color:#666;
+                }
+            }
+        }
+    }
+}

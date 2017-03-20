@@ -9,6 +9,8 @@ import Load from './components/load/demo';
 import ClipPath from './components/clip/clip';
 import CircleTimer from './components/circle_timer/demo';
 import WaterBall from './components/water_ball/demo';
+import Pagination from './components/pagination/demo';
+
 
 export default class Container extends Component{
     constructor(props){
@@ -28,6 +30,7 @@ export default class Container extends Component{
                     <Route path="/clip-path" component={ClipPath}/>
                     <Route path="/circle-timer" component={CircleTimer}/>
                     <Route path='/water-ball' component={WaterBall}/>
+                    <Route path='/pagination' component={Pagination}/>
                   </Route>
                 </Router>
             </div>
