@@ -10,7 +10,7 @@ class Table extends React.Component {
     getTableHead(){
         let {columns, headHeight} = this.props;
         let head = columns && columns.map((item,i)=>{
-            return <div key={'head'+i} className='head-cell' style={{'width':item.width, 'textAlign':item.align, 'height':headHeight}}>{item.title}</div>
+            return <div key={'head'+i} className='head-cell' style={{'width':item.width, 'textAlign':item.align, 'height':headHeight, 'lineHeight':headHeight+'px'}}>{item.title}</div>
         })
         return head;
     }
@@ -22,7 +22,7 @@ class Table extends React.Component {
            item= data.map((item,index)=>{
                 return <div key={'item'+index} className={index%2?'item odd':'item even'}>
                     {columns && columns.map((it,i)=>{
-                        return <li key={'itemLi'+i} className='item-cell' style={{'width':it.width, 'textAlign':it.align, 'height':dataHeight}}>{item[it.dataKey]}</li>
+                        return <li key={'itemLi'+i} className='item-cell' style={{'width':it.width, 'textAlign':it.align, 'height':dataHeight,'lineHeight':dataHeight+'px'}}>{item[it.dataKey]}</li>
                     })}
                 </div>
             })
@@ -35,7 +35,7 @@ class Table extends React.Component {
     render() {
         return (
         <div>
-            <div className='table-head'>
+            <div className='table-head' >
                 {this.getTableHead()}
             </div>
             <div className='table-body'>

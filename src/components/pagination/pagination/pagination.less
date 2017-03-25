@@ -9,8 +9,8 @@
             margin-right: 5px;
             a{
                 display: inline-block;
-                width: 20px;
-                height: 20px;
+                width: 25px;
+                height: 25px;
                 color: #285d96;
                 cursor: pointer;
                 text-align: center;
@@ -24,19 +24,29 @@
                     background: #ddd;
                 }
             }
-            &.pre,&.next{
+            &.pre,&.next,&.first,&.last{
                 a{
                     border:1px solid #ddd;
                 }
             }
             &.pre{
                 a:before{
-                    content:'<';
+                    content:"<";
                 }
             }
             &.next{
                 a:before{
                     content:'>';
+                }
+            }
+            &.first{
+                a:before{
+                    content:'<<';
+                }
+            }
+            &.last{
+                a:before{
+                    content:'>>';
                 }
             }
             &.disabled{
@@ -81,6 +91,9 @@
                     list-style: none;
                     display: inline-block;
                     color:#666;
+                }
+                &.even{
+                    background:#f7f4f4;
                 }
             }
         }

@@ -32,6 +32,14 @@ class Pagination extends React.Component {
         this.setState({current:nextPager});
     }
 
+    first(){
+        this.setState({current:1});
+    }
+    
+    last(){
+        this.setState({current:this.pageTotalSize});
+    }
+
     handlePage(pager){
         this.setState({current:pager});
     }
@@ -88,9 +96,11 @@ class Pagination extends React.Component {
                     <Page cls={current===this.pageTotalSize?'disabled next':'next'} onClick={this.next.bind(this)}/>
                 </div>:
                 data && data.length>0 && <div className='pagination-bar' style={{'textAlign':barPosition}}>
+                    <Page cls={current===1?'disabled first':'first'} onClick={this.first.bind(this)}/>
                     <Page cls={current===1?'disabled pre':'pre'} onClick={this.prev.bind(this)}/>
                     {this.getPaginationBar()}
                     <Page cls={current===this.pageTotalSize?'disabled next':'next'} onClick={this.next.bind(this)}/>
+                    <Page cls={current===this.pageTotalSize?'disabled last':'last'} onClick={this.last.bind(this)}/>
                 </div>
             }
             </div>

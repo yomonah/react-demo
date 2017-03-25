@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import PageTable from './pagination/pagination';
 import Title from '../../../components/title/title';
-// import {INTRODUCTION} from './introduce';
+import Introduce from '../../../components/introduce/introduce';
+import {INTRODUCTION} from './introduce';
 
 export default class Demo extends Component{
     constructor(props){
@@ -41,11 +42,10 @@ export default class Demo extends Component{
             {dataKey:'address', title:'地址', width:'30%', align:'center'}
         ];
         let props = {
-            width:500,
+            width:600,
             headHeight:50,
             dataHeight:40,
             pageSize:5,
-            domain:15,
             emptyText:'暂无数据',
             barPosition:'center',
             type:'normal',
@@ -58,10 +58,11 @@ export default class Demo extends Component{
     render(){
        let props = this.getProps();
        return <div>
-                {/*<Title {...INTRODUCTION}/>*/}
+                <Title {...INTRODUCTION}/>
                 <div className='demo-wrapper'>
                     <PageTable {...props}/>
                 </div>
+                <Introduce {...INTRODUCTION}/>
             </div>
     }
 }
