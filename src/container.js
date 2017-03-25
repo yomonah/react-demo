@@ -10,6 +10,7 @@ import ClipPath from './components/clip/clip';
 import CircleTimer from './components/circle_timer/demo';
 import WaterBall from './components/water_ball/demo';
 import Pagination from './components/pagination/demo';
+import CountNumber from './components/count_num/demo';
 
 
 export default class Container extends Component{
@@ -31,6 +32,7 @@ export default class Container extends Component{
                     <Route path="/circle-timer" component={CircleTimer}/>
                     <Route path='/water-ball' component={WaterBall}/>
                     <Route path='/pagination' component={Pagination}/>
+                    <Route path='/count-number' component={CountNumber}/>
                   </Route>
                 </Router>
             </div>

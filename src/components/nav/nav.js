@@ -14,7 +14,8 @@ export default class Head extends Component{
             {name:'剪裁遮罩', path:'/clip-path'},
             {name:'环形倒计时', path:'/circle-timer'},
             {name:'水波球', path:'/water-ball'},
-            {name:'分页表格',path:'/pagination'}
+            {name:'分页表格',path:'/pagination'},
+            {name:'跳动数字', path:'/count-number'}
         ]
     }
 

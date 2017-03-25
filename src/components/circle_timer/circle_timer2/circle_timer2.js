@@ -28,10 +28,12 @@ export default class Main extends Component{
     pause(){
         this.setState({start:true});
         this.timer && clearInterval(this.timer);
+        this.timer = null;
     }
 
     componentWillUnmount(){
         this.timer && clearInterval(this.timer);
+        this.timer = null;
     }
 
     count(){
@@ -48,6 +50,7 @@ export default class Main extends Component{
             this.currentTime = 0;
             this.setState({start:true})
             this.timer && clearInterval(this.timer);
+            this.timer = null;
         }
         var canvas = this.refs.circle;
         var ctx = canvas.getContext("2d");

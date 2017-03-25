@@ -29,6 +29,7 @@ export default class Main extends Component{
 
     componentWillUnmount(){
         this.timer && clearInterval(this.timer);
+        this.timer = null;
     }
 
     start(){
@@ -43,28 +44,31 @@ export default class Main extends Component{
         if(this.currentValue > 2){  //判断是否已到时
             this.currentValue = 0;
             this.timer && clearInterval(this.timer);
+            this.timer = null;
         }
         var canvas = this.refs.circle;
-        var ctx = canvas.getContext("2d");
-        canvas.width = width;
-        canvas.height = height;
-        var circle = {
-            x: width/2,
-            y: height/2,
-            r: radius > Math.min(width, height)/2 ? Math.min(width, height)/2-10:radius
-        };
-        //画底部背景
-        ctx.beginPath();
-        ctx.arc(circle.x, circle.y, circle.r, 0, Math.PI*2, false);
-        ctx.strokeStyle = defaultColor;
-        ctx.lineWidth = lineWidth;
-        ctx.stroke();
-        //画圆环进度条
-        ctx.beginPath();
-        ctx.arc(circle.x, circle.y, circle.r, 0, Math.PI*this.currentValue, false);
-        ctx.strokeStyle = ringColor;
-        ctx.lineWidth = lineWidth;
-        ctx.stroke();
+        if(canvas){
+            var ctx = canvas.getContext("2d");
+            canvas.width = width;
+            canvas.height = height;
+            var circle = {
+                x: width/2,
+                y: height/2,
+                r: radius > Math.min(width, height)/2 ? Math.min(width, height)/2-10:radius
+            };
+            //画底部背景
+            ctx.beginPath();
+            ctx.arc(circle.x, circle.y, circle.r, 0, Math.PI*2, false);
+            ctx.strokeStyle = defaultColor;
+            ctx.lineWidth = lineWidth;
+            ctx.stroke();
+            //画圆环进度条
+            ctx.beginPath();
+            ctx.arc(circle.x, circle.y, circle.r, 0, Math.PI*this.currentValue, false);
+            ctx.strokeStyle = ringColor;
+            ctx.lineWidth = lineWidth;
+            ctx.stroke();
+        }
     }
 
     render(){
