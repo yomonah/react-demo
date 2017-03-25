@@ -1,6 +1,6 @@
 /**
  * Created by yumengya on 2017/3/4
- * 配置的打包文件
+ * 开发环境配置的打包文件
  */
 var webpack = require('webpack');
 //var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('common.js');
