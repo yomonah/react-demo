@@ -1,5 +1,5 @@
 export const INTRODUCTION={
-          title:'d3柱形图',
+          title:'d3.js柱形图',
           context:'d3 4.7.1版本开发，配置信息:'+
           '&width: 图形宽度,整型; 如:500' +
           '&height: 图形高度,整型; 如:600'+
@@ -13,5 +13,6 @@ export const INTRODUCTION={
           '&label: boolean值，是否显示数值;'+ 
           '&xAxisConfig: x轴相关配置,具体配置参见demo; '+
           '&yAxisConfig: y轴相关配置,具体配置参见demo; '+
-          '&margin: 对象型,指定图形四周边距 '
+          '&margin: 对象型,指定图形四周边距 '+
+          '&https://github.com/yomonah/react-demo/tree/master/src/components/water_ball'
 }

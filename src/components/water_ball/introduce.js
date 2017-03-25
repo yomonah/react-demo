@@ -9,5 +9,6 @@ export const INTRODUCTION={
             '但其实是两个地方，1.当水波浪低于文字位置时，我们看到的文字由底容器层显示的；2.当水波浪高于文字时，底容器的文字会被波浪遮挡，这时我们看到的文字其实是显示在水波浪上的文本'+
             '&textSize: 文本字体大小'+
             '&outerCircle: 外层圆的相关配置，包含半径r和填充色fillColor两个属性'+
-            '&innerCircle: 内层圆的相关配置，包含半径r和填充色fillColor两个属性'
+            '&innerCircle: 内层圆的相关配置，包含半径r和填充色fillColor两个属性'+
+            '&https://github.com/yomonah/react-demo/tree/master/src/components/water_ball'
 }

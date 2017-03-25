@@ -8,25 +8,16 @@ export default class Title extends Component{
         }
     }
 
-    formatText(text){
-        let textArr = text.split('&');
-        let item = textArr && textArr.map((item,i)=>{
-            return <span key={i}>{item}</span>
-        });
-        return item;
-    }
-
     shouldComponentUpdate(){
         return false;
     }
 
     render(){
-        let {title, context} = this.props;
-        let text = this.formatText(context);
+        let {title} = this.props;
+        
         return(
             <div className='title-wrapper'>
                 <h5>{title}</h5>
-                <p>{text}</p>
             </div>
         )
     }

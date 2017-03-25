@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import CircleTimer from './circle_timer1/circle_timer';
 import CircleTimer2 from './circle_timer2/circle_timer2';
 import Title from '../../../components/title/title';
+import Introduce from '../../../components/introduce/introduce';
 import {INTRODUCTION} from './introduce';
 
 export default class Demo extends Component{
@@ -60,6 +61,7 @@ export default class Demo extends Component{
                     <CircleTimer2 {...this.getProps()}/>
                 </div>
                 </div>
+                <Introduce {...INTRODUCTION}/>
            </div>
     }
 }

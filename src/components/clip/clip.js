@@ -2,6 +2,7 @@ import './clip.less';
 import React, {Component} from 'react';
 import {category} from './data';
 import Title from '../../../components/title/title';
+import Introduce from '../../../components/introduce/introduce';
 import {INTRODUCTION} from './introduce';
 
 export default class Clip extends Component{
@@ -46,6 +47,7 @@ export default class Clip extends Component{
                 <span className='title'>mouse hover me</span>
               </div>
               </div> 
+              <Introduce {...INTRODUCTION}/>
             </div>
         )
     }

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import List from './list';
 import Title from '../../../components/title/title';
+import Introduce from '../../../components/introduce/introduce';
 import {INTRODUCTION} from './introduce';
 
 export default class Demo extends Component{
@@ -34,6 +35,7 @@ export default class Demo extends Component{
                 <div className='demo-wrapper'>
                     <List {...listProps}/>
                 </div>
+                <Introduce  {...INTRODUCTION}/>
             </div>
     }
 }

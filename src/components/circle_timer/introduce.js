@@ -8,5 +8,6 @@ export const INTRODUCTION={
           '&defaultColor: 圆的底色'+
           '&lineWidth: 数值型，进度条的宽度'+
           '& --------------------------'+
-          '&demo2的话是模仿网易云音乐的播放器，可自行暂停／开始，配置信息基本同上'
+          '&demo2的话是模仿网易云音乐的播放器，可自行暂停／开始，配置信息基本同上'+
+          '&https://github.com/yomonah/react-demo/tree/master/src/components/circle_timer'
 }

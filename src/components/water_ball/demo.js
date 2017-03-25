@@ -2,6 +2,7 @@ import './demo.less';
 import React, {Component} from 'react';
 import WaterBall from './water_ball';
 import Title from '../../../components/title/title';
+import Introduce from '../../../components/introduce/introduce';
 import {INTRODUCTION} from './introduce';
 
 export default class Demo extends Component{
@@ -76,6 +77,7 @@ export default class Demo extends Component{
             <WaterBall data={data} config={this._getCircleProps()}/>
             <WaterBall data={data} config={this.getCircleProps()}/>
            </div>
+           <Introduce {...INTRODUCTION}/>
            </div>
     }
 }

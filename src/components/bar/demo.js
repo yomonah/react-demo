@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Bar from './bar';
 import Title from '../../../components/title/title';
+import Introduce from '../../../components/introduce/introduce';
 import {INTRODUCTION} from './introduce';
 
 export default class Demo extends Component{
@@ -62,10 +63,11 @@ export default class Demo extends Component{
     render(){
         let {title, context} = INTRODUCTION;
         return <div>
-            <Title title={title} context={context}/>
+            <Title title={title}/>
             <div className='demo-wrapper'>
                 <Bar {...this._getBarProps()}/>
             </div>
+            <Introduce context={context}/>
         </div>
     }
 }
