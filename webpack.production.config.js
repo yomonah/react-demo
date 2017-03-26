@@ -13,7 +13,12 @@ module.exports = {
         new HtmlWebpackPlugin({
             title:"react-demo",
             filename:'app.html',
-            template:'./build/index.html'      //Load a custom template 
+            template:'./build/app.html'      //Load a custom template 
+        }),
+        new webpack.DefinePlugin({
+            "process.env":{
+                NODE_ENV:JSON.stringify('production')
+            }
         })
     ],
     entry:{
