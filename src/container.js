@@ -11,6 +11,7 @@ import CircleTimer from './components/circle_timer/demo';
 import WaterBall from './components/water_ball/demo';
 import Pagination from './components/pagination/demo';
 import CountNumber from './components/count_num/demo';
+import CardBanner from './components/card_banner/demo';
 
 
 export default class Container extends Component{
@@ -33,6 +34,7 @@ export default class Container extends Component{
                     <Route path='/water-ball' component={WaterBall}/>
                     <Route path='/pagination' component={Pagination}/>
                     <Route path='/count-number' component={CountNumber}/>
+                    <Route path='/card-banner' component={CardBanner}/>
                   </Route>
                 </Router>
             </div>

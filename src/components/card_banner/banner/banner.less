@@ -1,0 +1,30 @@
+.banner-wrapper{
+    margin:50px 20px 0px 0px;
+    display: inline-block;
+    .item{
+        width: 160px;
+        height: 280px;
+        text-align: center;
+        border-radius: 8px;
+        overflow: hidden;
+        transition:transform 0.5s ease-in-out;
+        .item-text{
+            position: relative;
+            top: 230px;
+            font-size: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            display: inline-block;
+            padding: 5px 20px 5px 20px;
+            border-radius: 25px;
+        }
+    }
+    @keyframes show{
+        0% {transform: rotateY(90deg);}
+        100%{transform: rotateY(0deg);}
+    }
+    @keyframes hide{
+        0% {transform: rotateY(0deg);}
+        100%{transform: rotateY(90deg);}
+    }
+}
