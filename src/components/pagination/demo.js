@@ -32,6 +32,7 @@ export default class Demo extends Component{
             {age:19, userName:'U', email:'1453453@qq.com', address:'上海市'},
             {age:20, userName:'V', email:'1453435@qq.com', address:'杭州市余杭区'},
         ],
+        type:'normal'
       }
     }
 
@@ -48,11 +49,20 @@ export default class Demo extends Component{
             pageSize:5,
             emptyText:'暂无数据',
             barPosition:'center',
-            type:'normal',
+            type:this.state.type,
             data:this.state.data,
             columns:columns,
         }
         return props;
+    }
+
+    changePagiType(){
+        let {type} = this.state;
+        if('normal' === type){
+            this.setState({type:'simple'});
+        }else{
+            this.setState({type:'normal'});
+        }
     }
 
     render(){
@@ -61,6 +71,7 @@ export default class Demo extends Component{
                 <Title {...INTRODUCTION}/>
                 <div className='demo-wrapper'>
                     <PageTable {...props}/>
+                    <button onClick={this.changePagiType.bind(this)} className='default-btn mid-position'>切换分页类型</button>
                 </div>
                 <Introduce {...INTRODUCTION}/>
             </div>

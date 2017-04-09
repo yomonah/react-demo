@@ -16,7 +16,9 @@ export default class Head extends Component{
             {name:'水波球', path:'/water-ball'},
             {name:'分页表格',path:'/pagination'},
             {name:'跳动数字', path:'/count-number'},
-            {name:'随机翻牌轮播', path:'/card-banner'}
+            {name:'随机翻牌轮播', path:'/card-banner'},
+            {name:'WebGL－球体落地运动', path:'/webGL-ball'},
+            {name:'WebGL－旋转运动', path:'/webGL-icosahedron'},
         ]
     }
 

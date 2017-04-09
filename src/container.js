@@ -12,6 +12,8 @@ import WaterBall from './components/water_ball/demo';
 import Pagination from './components/pagination/demo';
 import CountNumber from './components/count_num/demo';
 import CardBanner from './components/card_banner/demo';
+import WebGLBall from './components/webGL_ball/ball';
+import WebGLIcos from './components/webGL_icosahedron/icosahedron';
 
 
 export default class Container extends Component{
@@ -35,6 +37,8 @@ export default class Container extends Component{
                     <Route path='/pagination' component={Pagination}/>
                     <Route path='/count-number' component={CountNumber}/>
                     <Route path='/card-banner' component={CardBanner}/>
+                    <Route path='/webGL-ball' component={WebGLBall}/>
+                    <Route path='/webGL-icosahedron' component={WebGLIcos}/>
                   </Route>
                 </Router>
             </div>
