@@ -24,7 +24,7 @@
     top: -95px;
     .move-list-item{
       width: 450px;
-      border: 1px solid #668B8B;
+      border: 1px solid rgba(102,139,139,0.5);
       height: 40px;
       list-style: none;
       color: #668B8B;
@@ -61,7 +61,7 @@
         width: 470px;
         height: 105px;
         color: #668B8B;
-        animation : 1s show;
+        animation : 1s show-content;
         .item-time{
           padding: 5px 0px 0px 10px;
         }
@@ -79,7 +79,7 @@
           left: 10px;
         }
       }
-      @keyframes show{
+      @keyframes show-content{
         0%{opacity:0}
         50%{opacity:0}
         100%{opacity:1}
@@ -88,10 +88,10 @@
         width: 470px;
         height: 105px;
         color: #668B8B;
-        animation: 1s hide;
+        animation: 1s hide-container;
         animation-delay:4s;
       }
-      @keyframes hide{
+      @keyframes hide-container{
         0%{opacity:1}
         100%{opacity:0}
       }
