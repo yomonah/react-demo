@@ -154,7 +154,7 @@ export default class Icosahedron extends Component{
         let {disabled} = this.state;
         return(
             <div className='icos-wrapper'>
-            } <Title {...INTRODUCTION}/>
+             <Title {...INTRODUCTION}/>
              <div className='demo-wrapper'>
                 <canvas ref='main' width='700' height='500'/>
             </div>

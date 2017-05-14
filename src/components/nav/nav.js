@@ -19,6 +19,7 @@ export default class Head extends Component{
             {name:'随机翻牌轮播', path:'/card-banner'},
             {name:'WebGL－球体落地运动', path:'/webGL-ball'},
             {name:'WebGL－旋转运动', path:'/webGL-icosahedron'},
+            {name:'轮盘抽奖', path:'/lottery'}
         ]
     }
 

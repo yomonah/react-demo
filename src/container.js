@@ -14,6 +14,7 @@ import CountNumber from './components/count_num/demo';
 import CardBanner from './components/card_banner/demo';
 import WebGLBall from './components/webGL_ball/ball';
 import WebGLIcos from './components/webGL_icosahedron/icosahedron';
+import Lottery from './components/lottery/lottery';
 
 
 export default class Container extends Component{
@@ -39,6 +40,7 @@ export default class Container extends Component{
                     <Route path='/card-banner' component={CardBanner}/>
                     <Route path='/webGL-ball' component={WebGLBall}/>
                     <Route path='/webGL-icosahedron' component={WebGLIcos}/>
+                    <Route path='/lottery' component={Lottery}/>
                   </Route>
                 </Router>
             </div>
