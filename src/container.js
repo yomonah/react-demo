@@ -15,6 +15,7 @@ import CardBanner from './components/card_banner/demo';
 import WebGLBall from './components/webGL_ball/ball';
 import WebGLIcos from './components/webGL_icosahedron/icosahedron';
 import Lottery from './components/lottery/lottery';
+import WeChart from './components/wechart/wechart';
 
 
 export default class Container extends Component{
@@ -25,9 +26,8 @@ export default class Container extends Component{
     render(){
         return(
             <div className='app-content'>
-                <Head/>
                 <Router history={hashHistory}>
-                  <Route path="/" component={Nav}>
+                <Route path="/" component={Nav}>
                     <IndexRedirect to="/bar" />
                     <Route path="/bar" component={Bar}/>
                     <Route path="/listBanner" component={ListBanner}/>
@@ -41,7 +41,8 @@ export default class Container extends Component{
                     <Route path='/webGL-ball' component={WebGLBall}/>
                     <Route path='/webGL-icosahedron' component={WebGLIcos}/>
                     <Route path='/lottery' component={Lottery}/>
-                  </Route>
+                </Route>
+                    <Route path='/wechart' component={WeChart}/>
                 </Router>
             </div>
         )

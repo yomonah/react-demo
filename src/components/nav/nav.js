@@ -1,8 +1,9 @@
 import './nav.less';
 import React, {Component} from 'react';
 import {Link} from 'react-router';
+import Head from '../head/head';
 
-export default class Head extends Component{
+export default class Nav extends Component{
     constructor(props){
         super(props);
         this.state = {
@@ -19,7 +20,8 @@ export default class Head extends Component{
             {name:'随机翻牌轮播', path:'/card-banner'},
             {name:'WebGL－球体落地运动', path:'/webGL-ball'},
             {name:'WebGL－旋转运动', path:'/webGL-icosahedron'},
-            {name:'轮盘抽奖', path:'/lottery'}
+            {name:'轮盘抽奖', path:'/lottery'},
+            {name:'扫码随机出个签',path:'/wechart'}
         ]
     }
 
@@ -36,6 +38,7 @@ export default class Head extends Component{
         let links = this.getLinks();
         return(
             <div className='app-wrapper'>
+              <Head/>
               <div className='component-wrapper'>
                  {this.props.children}
                </div>

@@ -42,7 +42,7 @@ module.exports = {
                 }
             },
             { test: /\.scss$/, loader: 'style!css!sass?sourceMap'},
-            { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192'}
+            { test: /\.(png|jpg|jpeg)$/, loader: 'url-loader?limit=8192'}
         ]
     },
     resolve: {
