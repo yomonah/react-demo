@@ -16,7 +16,8 @@ import WebGLBall from './components/webGL_ball/ball';
 import WebGLIcos from './components/webGL_icosahedron/icosahedron';
 import Lottery from './components/lottery/lottery';
 import WeChart from './components/wechart/wechart';
-
+import WebGLImg from './components/webGL_img/main';
+import Earth3d from './components/webGL_earth/earth';
 
 export default class Container extends Component{
     constructor(props){
@@ -41,6 +42,8 @@ export default class Container extends Component{
                     <Route path='/webGL-ball' component={WebGLBall}/>
                     <Route path='/webGL-icosahedron' component={WebGLIcos}/>
                     <Route path='/lottery' component={Lottery}/>
+                    <Route path='/webGL-img' component={WebGLImg}/>
+                    <Route path='/webGL-earth' component={Earth3d}/>
                 </Route>
                     <Route path='/wechart' component={WeChart}/>
                 </Router>

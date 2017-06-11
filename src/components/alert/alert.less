@@ -1,3 +1,52 @@
 .alert-container{
-  
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  top: 0;
+  .alert-box{
+    position: fixed;
+    left: 50%;
+    bottom: 50%;
+    &.show{
+      animation: show 0.2s ease-in-out;
+    }
+    &.hide{
+      animation: hide 0.2s ease-in-out;
+    }
+    .text-box{
+      position: relative;
+      background: #fff;
+      padding: 25px 80px;
+      right: 50%;
+      border-radius: 5px;
+      i{
+        position: relative;
+        left: -15px;
+      }
+      &.alert-success{
+        i{
+          color: green;
+        }
+      }
+      &.alert-error{
+        i{
+          color: #CD0000;
+        }
+      }
+      &.alert-warn{
+        i{
+          color:#ffcc01
+        }
+      }
+    }
+  }
+}
+@keyframes show{
+  from{bottom:40%; opacity: 0}
+  to{bottom: 50%; opacity: 1}
+}
+@keyframes hide{
+  from{bottom: 50%; opacity: 1}
+  to{bottom: 40%; opacity: 0}
 }
