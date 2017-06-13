@@ -19,7 +19,10 @@ export default class Lottery extends Component{
       },
       angles:-108,
       activeIndex:null,
-      times:3
+      times:3,
+      alert:false,
+      alertType:'',
+      alertMsg:''
     }
   }
 
@@ -75,9 +78,9 @@ export default class Lottery extends Component{
     let self=this;
     let {turnplate,angles,activeIndex,times} = this.state;
     activeIndex = Math.floor(Math.random()*turnplate.restaraunts.length+1);
-    console.log(activeIndex);
     if(times === 0){
-      alert('抽奖机会已用光～');
+      // alert('抽奖机会已用光～');
+      this.setState({alert:true, alertType:'warn', alertMsg:'抽奖机会已用完'});
       return;
     }else{
       times -= 1;
@@ -93,7 +96,23 @@ export default class Lottery extends Component{
   showPrize(){
     let {turnplate, activeIndex} = this.state;
     let text = activeIndex === 2 ? turnplate.restaraunts[activeIndex-1] : '恭喜抽中'+turnplate.restaraunts[activeIndex-1];
-    alert(text);
+    // alert(text);
+    this.setState({alert:true, alertType:'success', alertMsg:text});
+  }
+
+  close(flag){
+    this.setState({alert:flag});
+  }
+
+  getProps(){
+    let {alert, alertType, alertMsg} = this.state;
+    let props ={
+      text:alertMsg,
+      duration:2000,
+      type:alertType,
+      show:alert
+    }
+    return props;
   }
 
   render() {
@@ -108,6 +127,7 @@ export default class Lottery extends Component{
           </div>
           <div className="btn" onClick={this.start.bind(this)}></div>
         </div>
+        <AlertMsg {...this.getProps()} close={this.close.bind(this)}/>
         <Introduce {...INTRODUCTION}/>
     </div>
     );

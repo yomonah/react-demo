@@ -24,6 +24,8 @@ export default class Nav extends Component{
             {name:'H5扫码随机出个签',path:'/wechart'},
             {name:'WebGL - 贴图', path:'/webGL-img'},
             {name:'3D地球', path:'/webGL-earth'},
+            {name:'css3动画－樱桃小丸子', path:'/wanzi'},
+            {name:'css3动画－旅行的小车', path:'/car'},
         ]
     }
 

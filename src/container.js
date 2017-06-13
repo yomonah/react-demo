@@ -18,6 +18,8 @@ import Lottery from './components/lottery/lottery';
 import WeChart from './components/wechart/wechart';
 import WebGLImg from './components/webGL_img/main';
 import Earth3d from './components/webGL_earth/earth';
+import Wanzi from './components/wanzi/wanzi';
+import Car from './components/car/car';
 
 export default class Container extends Component{
     constructor(props){
@@ -44,6 +46,8 @@ export default class Container extends Component{
                     <Route path='/lottery' component={Lottery}/>
                     <Route path='/webGL-img' component={WebGLImg}/>
                     <Route path='/webGL-earth' component={Earth3d}/>
+                    <Route path='/wanzi' component={Wanzi}/>
+                    <Route path='/car' component={Car}/>
                 </Route>
                     <Route path='/wechart' component={WeChart}/>
                 </Router>
