@@ -20,6 +20,7 @@ import WebGLImg from './components/webGL_img/main';
 import Earth3d from './components/webGL_earth/earth';
 import Wanzi from './components/wanzi/wanzi';
 import Car from './components/car/car';
+import Location from './components/picture/main';
 
 export default class Container extends Component{
     constructor(props){
@@ -48,6 +49,7 @@ export default class Container extends Component{
                     <Route path='/webGL-earth' component={Earth3d}/>
                     <Route path='/wanzi' component={Wanzi}/>
                     <Route path='/car' component={Car}/>
+                    <Route path='/location' component={Location}/>
                 </Route>
                     <Route path='/wechart' component={WeChart}/>
                 </Router>
