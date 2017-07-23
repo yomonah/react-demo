@@ -42,8 +42,8 @@ export default class Head extends Component{
               </a>
               <a className='home' href='https://yomonah.github.io/' title='主页'>HOME</a>
               <ul className={'demo-list ' +demoListCls} onMouseOver={this.listOver.bind(this)} onMouseOut={this.listOut.bind(this)}>
-                <a href='https://yomonah.github.io/project/app.html'>REACT DEMO</a>
-                <a>G2 DEMO</a>
+                <a href='https://yomonah.github.io/project/reactDemo/app.html'>REACT DEMO</a>
+                <a href='https://yomonah.github.io/project/g2Demo/index.html' target='_blank'>G2 DEMO</a>
               </ul>
             </div>
         )
