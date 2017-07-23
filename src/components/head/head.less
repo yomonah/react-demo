@@ -1,7 +1,7 @@
 .app-head{
   min-width:1260px;
-  height: 323px;
-  background: url(./../../img/head_bg.jpg) no-repeat;
+  height: 417px;
+  background: url(./../../img/head.jpg) center no-repeat;
   background-size:cover;
   color:#fff;
   .title{
@@ -9,31 +9,85 @@
     color: #fff;
     font-weight: bold;
     font-size: 25px;
-    margin: 15px 0px 0px 15px;
+    margin: 20px 0px 0px 15px;
     display: inline-block;
   }
   .name{
-      float: left;
-      margin: 22px 0px 0px 15px;
-      display: inline-block;
-      font-size: 12px;
-      border: 1px solid;
-      border-radius: 10px;
-      padding: 1px 10px;
-      color: #c5c2c2;
+    float: left;
+    margin: 26px 0px 0px 15px;
+    display: inline-block;
+    font-size: 14px;
+    border: 1px solid;
+    border-radius: 15px;
+    padding: 1px 10px;
+    color: #c5c2c2;
+    text-decoration: none;
+    i{
+      margin-right: 5px;
+      font-size: 16px;
+    }
+    &:hover{
+      color: pink;
+    }
   }
   .home,.blog,.jianshu{
+    font-size: 12px;
+    font-weight: bold;
     float: right;
     cursor: pointer;
-    margin: 15px 25px 0px 0px;
-    letter-spacing: 2px;
+    margin: 25px 35px 15px 0px;
+    padding-bottom: 15px;
+    letter-spacing: 1px;
+    font-family: -apple-system,"Helvetica Neue",Arial,"PingFang SC","Hiragino Sans GB",STHeiti,"Microsoft YaHei","Microsoft JhengHei","Source Han Sans SC","Noto Sans CJK SC","Source Han Sans CN","Noto Sans SC","Source Han Sans TC","Noto Sans CJK TC","WenQuanYi Micro Hei",SimSun,sans-serif;
     &:visited, &:link, &:active{
       color:#fff;
       text-decoration: none;
     }
     &:hover{
-      color:#469AE0;
-      border-bottom: 3px solid #469AE0;
+      color:#dadada;
+    }
+  }
+  .demo-list{
+    position: fixed;
+    top: 38px;
+    left: 1072px;
+    background: #fff;
+    color: #000;
+    // width: 100px;
+    padding: 10px 0px;
+    border-radius: 3px;
+    transition: width,height 0.3s,0.3s;
+    &.hide{
+      width: 0px;
+      height: 0px;
+      a{
+        display: none;
+      }
+    }
+    &.show{
+      width: 100px;
+      height: 60px;
+      a{
+        display: block;
+      }
+    }
+    a{
+      height: 30px;
+      line-height: 30px;
+      display: block;
+      padding-left: 5px;
+      font-size: 12px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      font-family: -apple-system,"Helvetica Neue",Arial,"PingFang SC","Hiragino Sans GB",STHeiti,"Microsoft YaHei","Microsoft JhengHei","Source Han Sans SC","Noto Sans CJK SC","Source Han Sans CN","Noto Sans SC","Source Han Sans TC","Noto Sans CJK TC","WenQuanYi Micro Hei",SimSun,sans-serif;
+      &:hover{
+        color: #666;
+        background: #dadada;
+      }
+      &:visited{
+        color: #000;
+      }
     }
   }
 }
