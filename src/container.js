@@ -21,6 +21,8 @@ import Earth3d from './components/webGL_earth/earth';
 import Wanzi from './components/wanzi/wanzi';
 import Car from './components/car/car';
 import Location from './components/picture/main';
+import Wave from './components/wave/wave';
+import WaveLine from './components/wave_line/main';
 
 export default class Container extends Component{
     constructor(props){
@@ -50,6 +52,8 @@ export default class Container extends Component{
                     <Route path='/wanzi' component={Wanzi}/>
                     <Route path='/car' component={Car}/>
                     <Route path='/location' component={Location}/>
+                    <Route path='/wave' component={Wave}/>
+                    <Route path='/wave-line' component={WaveLine}/>
                 </Route>
                     <Route path='/wechart' component={WeChart}/>
                 </Router>

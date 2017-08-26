@@ -26,7 +26,9 @@ export default class Nav extends Component{
             {name:'3D地球', path:'/webGL-earth'},
             {name:'css3动画－樱桃小丸子', path:'/wanzi'},
             {name:'css3动画－旅行的小车', path:'/car'},
-            {name:'图片智能对比',path:'/location'}
+            {name:'图片智能对比',path:'/location'},
+            {name:'canvas水波浪效果', path:'/wave'},
+            // {name:'canvas无限运动波浪线', path:'/wave-line'},
         ]
     }
 
