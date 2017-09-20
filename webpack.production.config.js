@@ -21,6 +21,9 @@ module.exports = {
             }
         })
     ],
+    externals:[{
+        xmlhttprequest: '{XMLHttpRequest:XMLHttpRequest}'
+    }],
     entry:{
         app:path.resolve(__dirname,'./src/app.js'),
         vendors:['d3','react']

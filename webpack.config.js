@@ -12,6 +12,9 @@ module.exports = {
     //commonsPlugin,
     new webpack.NoErrorsPlugin()
   ],
+    externals:[{
+        xmlhttprequest: '{XMLHttpRequest:XMLHttpRequest}'
+    }],
     //页面入口文件配置
     //entry: {mian : './src/app.js'},
     entry:[
