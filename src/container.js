@@ -55,7 +55,7 @@ export default class Container extends Component{
                     <Route path='/wave' component={Wave}/>
                     <Route path='/wave-line' component={WaveLine}/>
                 </Route>
-                    <Route path='/wechart' component={WeChart}/>
+                    {/* <Route path='/wechart' component={WeChart}/> */}
                 </Router>
             </div>
         )
