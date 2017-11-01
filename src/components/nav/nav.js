@@ -28,6 +28,7 @@ export default class Nav extends Component{
             {name:'css3动画－旅行的小车', path:'/car'},
             {name:'图片智能对比',path:'/location'},
             {name:'canvas水波浪效果', path:'/wave'},
+            {name:'canvas马赛克画笔',path:'/mosaic'}
             // {name:'canvas无限运动波浪线', path:'/wave-line'},
         ]
     }

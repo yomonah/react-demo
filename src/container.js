@@ -23,6 +23,7 @@ import Car from './components/car/car';
 import Location from './components/picture/main';
 import Wave from './components/wave/wave';
 import WaveLine from './components/wave_line/main';
+import Mosaic from './components/mosaic/mosaic';
 
 export default class Container extends Component{
     constructor(props){
@@ -54,6 +55,7 @@ export default class Container extends Component{
                     <Route path='/location' component={Location}/>
                     <Route path='/wave' component={Wave}/>
                     <Route path='/wave-line' component={WaveLine}/>
+                    <Route path='/mosaic' component={Mosaic}/>
                 </Route>
                     {/* <Route path='/wechart' component={WeChart}/> */}
                 </Router>
