@@ -24,6 +24,9 @@ import Location from './components/picture/main';
 import Wave from './components/wave/wave';
 import WaveLine from './components/wave_line/main';
 import Mosaic from './components/mosaic/mosaic';
+import Filter from './components/filter/filter';
+import Test from './components/test/test';
+import Family from './components/family_relation/family';
 
 export default class Container extends Component{
     constructor(props){
@@ -35,7 +38,7 @@ export default class Container extends Component{
             <div className='app-content'>
                 <Router history={hashHistory}>
                 <Route path="/" component={Nav}>
-                    <IndexRedirect to="/bar" />
+                    <IndexRedirect to="/mosaic" />
                     <Route path="/bar" component={Bar}/>
                     <Route path="/listBanner" component={ListBanner}/>
                     <Route path="/load" component={Load}/>
@@ -56,6 +59,9 @@ export default class Container extends Component{
                     <Route path='/wave' component={Wave}/>
                     <Route path='/wave-line' component={WaveLine}/>
                     <Route path='/mosaic' component={Mosaic}/>
+                    <Route path='/filter' component={Filter}/>
+                    <Route path='/test' component={Test}/>
+                    <Route path='/family' component={Family}/>
                 </Route>
                     {/* <Route path='/wechart' component={WeChart}/> */}
                 </Router>

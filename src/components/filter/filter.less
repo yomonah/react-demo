@@ -1,0 +1,126 @@
+.filter-wrapper{
+  .file-area{
+    width: 200px;
+    height: 200px;
+    border: 2px solid #dadada;
+    border-radius: 10px;
+    border-style: dotted;
+    color: #dadada;
+    .fa-plus{
+      position: relative;
+      text-align: center;
+      height: 100%;
+      width:100%;
+      line-height: 550%;
+      font-size: 35px;
+      cursor:pointer;
+    }
+    .input-img{
+        position: absolute;
+        font-size: 100px;
+        width: 200px;
+        height: 200px;
+        right: 0;
+        top: 0;
+        opacity: 0;
+        cursor:pointer;
+    }
+    p{
+      position: relative;
+      top: -88%;
+      font-size: 18px;
+    }
+    .img-div{
+        position: absolute;
+        display: inline-block;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background: #fff;
+        .preview{
+            display: none;
+            height: 100%;
+            border-radius: 10px;
+            cursor:auto;
+          }
+    }
+    .close{
+      display: none;
+      position: absolute;
+      top: 2%;
+      left: 90%;
+      font-size: 15px;
+    }
+    .save{
+        display: none;
+        position: absolute;
+        top: 2%;
+        left: 80%;
+        font-size: 15px;
+      }
+  }
+  .btn-group{
+    margin-top: 20px;
+    button{
+      border: none;
+      background: none;
+      outline: none;
+    }
+    div{
+      border-radius: 5px;
+      .btn-img{
+        border: 1px solid #f2f2f2;
+        border-radius: 5px;
+        cursor:pointer;
+      }
+      .btn-img:hover{
+          border:1px solid #dadada;
+      }
+    }
+  }
+  .black{
+    filter:grayscale(1);
+    -webkit-filter:grayscale(100%);
+  }
+  .old{
+      filter: sepia(50%);
+      -webkit-filter: sepia(50%);
+  }
+  .sun{
+      filter: brightness(110%);
+      -webkit-filter: brightness(110%);
+  }
+  .roll{
+      filter: sepia(70%);
+      -webkit-filter: sepia(70%);
+  }
+  .pink{
+      filter: saturate(200%);
+      -webkit-filter: saturate(200%);
+  }
+  .japen{
+      filter: hue-rotate(25deg);
+      -webkit-filter: hue-rotate(25deg);
+  }
+  .invert{
+      filter:invert(100%);
+      -webkit-filter:invert(100%);
+  }
+  .beautiful{
+      filter: opacity(0.6);
+      -webkit-filter: opacity(0.6);
+  }
+  .dark{
+      filter: brightness(80%);
+      -webkit-filter: brightness(80%);
+  }
+  .blurry{
+      filter: blur(2px);
+      -webkit-filter: blur(1px);
+  }
+  .text{
+      position: relative;
+      top: -88%;
+      font-size: 18px;
+  }
+}

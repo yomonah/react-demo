@@ -21,16 +21,18 @@ export default class Nav extends Component{
             {name:'WebGL－球体落地运动', path:'/webGL-ball'},
             {name:'WebGL－旋转运动', path:'/webGL-icosahedron'},
             {name:'轮盘抽奖', path:'/lottery'},
-            // {name:'H5扫码随机出个签',path:'/wechart'},
             {name:'WebGL - 贴图', path:'/webGL-img'},
             {name:'3D地球', path:'/webGL-earth'},
             {name:'css3动画－樱桃小丸子', path:'/wanzi'},
             {name:'css3动画－旅行的小车', path:'/car'},
             {name:'图片智能对比',path:'/location'},
             {name:'canvas水波浪效果', path:'/wave'},
-            {name:'canvas马赛克画笔',path:'/mosaic'}
+            {name:'canvas马赛克画笔',path:'/mosaic'},
+            {name:'简单滤镜功能',path:'/filter'},
+            {name:'家族图谱',path:'/family'}
+            // {name:'开发测试', path:'/test'}
             // {name:'canvas无限运动波浪线', path:'/wave-line'},
-        ]
+        ].reverse();
     }
 
     getLinks(){
