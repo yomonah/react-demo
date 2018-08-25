@@ -27,6 +27,7 @@ import Mosaic from './components/mosaic/mosaic';
 import Filter from './components/filter/filter';
 import Test from './components/test/test';
 import Family from './components/family_relation/family';
+import Map from './components/line_map/map';
 
 export default class Container extends Component{
     constructor(props){
@@ -38,7 +39,7 @@ export default class Container extends Component{
             <div className='app-content'>
                 <Router history={hashHistory}>
                 <Route path="/" component={Nav}>
-                    <IndexRedirect to="/mosaic" />
+                    <IndexRedirect to="/line-map" />
                     <Route path="/bar" component={Bar}/>
                     <Route path="/listBanner" component={ListBanner}/>
                     <Route path="/load" component={Load}/>
@@ -62,6 +63,7 @@ export default class Container extends Component{
                     <Route path='/filter' component={Filter}/>
                     <Route path='/test' component={Test}/>
                     <Route path='/family' component={Family}/>
+                    <Route path='/line-map' component={Map}/>
                 </Route>
                     {/* <Route path='/wechart' component={WeChart}/> */}
                 </Router>

@@ -29,7 +29,8 @@ export default class Nav extends Component{
             {name:'canvas水波浪效果', path:'/wave'},
             {name:'canvas马赛克画笔',path:'/mosaic'},
             {name:'简单滤镜功能',path:'/filter'},
-            {name:'家族图谱',path:'/family'}
+            {name:'家族图谱',path:'/family'},
+            {name:'飞线地图',path:'/line-map'}
             // {name:'开发测试', path:'/test'}
             // {name:'canvas无限运动波浪线', path:'/wave-line'},
         ].reverse();
